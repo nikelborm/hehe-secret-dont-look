@@ -1,3 +1,5 @@
-import {} from "constructs";
+import { Data } from "effect";
 
 console.log("asd");
+
+// Data.

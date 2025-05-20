@@ -15,6 +15,7 @@
 - no discussions
 - no linting
 - no thinking
+- NO PERFECTIONISM!!!!
 - no restrictions
 - no looking at the source code
 - ~~no~~ ⭐️ing
@@ -28,3 +29,17 @@
 3. https://github.com/dagger/dagger
 
 ## TODO
+
+1. benchmark which protobuf generate TS files are the smallest, shic
+2. PR to ts-proto to enable tree-shaking?
+3. PR to ts-proto to enable `erasableSyntaxOnly`?
+
+## Notes
+
+1. gogo/proto deprecated: [moby/buildkit#3119](https://github.com/moby/buildkit/issues/3119)
+2. protobuf.js is dead
+3. there's nothing in Effect.ts codebase about protobuf or gRPC. Only MsgPack, which is irrelevant
+4. [GitHub bufbuild/protobuf-es](https://github.com/bufbuild/protobuf-es), [@bufbuild/protoc-gen-es NPM](https://www.npmjs.com/package/@bufbuild/protoc-gen-es) are fresh and hot (3 yo)
+5. 2 previous libraries are used by [GitHub stephenh/ts-proto](https://github.com/stephenh/ts-proto), [NPM stephenh/ts-proto](https://www.npmjs.com/package/ts-proto), which I'll use
+
+## Plan

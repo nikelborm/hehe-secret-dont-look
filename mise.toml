@@ -1,2 +1,60 @@
 [tools]
 node = "latest"
+protoc = "latest"
+
+[tasks.build]
+description = "Build the CLI"
+run = """
+#!/usr/bin/env bash
+set -euo pipefail
+
+PATH=$PATH:node_modules/.bin/
+
+command -v tspc >/dev/null 2>&1 || {
+  echo "tspc is required but not installed. Try running npm install"
+  exit 1
+}
+
+rm -rf dist
+tspc
+"""
+
+[tasks.start]
+description = "Watch index.ts"
+run = """
+#!/usr/bin/env bash
+set -euo pipefail
+
+node \
+  --use-strict \
+  --watch \
+  --trace-uncaught \
+  --disable-warning=ExperimentalWarning \
+  ./index.ts
+"""
+
+[tasks.gen-ts-protobuf]
+description = "Generate ts declarations from .proto of BuildKit frontend API"
+run = """
+#!/usr/bin/env bash
+set -euo pipefail
+PATH=$PATH:node_modules/.bin/
+
+#? --proto_path=./directory
+
+#? --ts_proto_opt=outputEncodeMethods=false
+#? --ts_proto_opt=outputJsonMethods=false
+#? --ts_proto_opt=outputPartialMethods=false
+
+protoc \
+  --plugin=./node_modules/.bin/protoc-gen-ts_proto \
+  --ts_proto_opt=esModuleInterop=true,importSuffix=.ts \
+  --ts_proto_opt=lowerCaseServiceMethods=true \
+  --ts_proto_opt=oneof=unions \
+  --ts_proto_out=./ \
+  --proto_path=./buildkit/solver/pb/ \
+  ./buildkit/solver/pb/ops.proto
+
+prettier ./ops.ts --write
+mv -f ./ops.ts ./generated/
+"""

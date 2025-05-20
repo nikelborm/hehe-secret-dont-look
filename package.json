@@ -3,13 +3,6 @@
   "version": "1.0.0",
   "type": "module",
   "license": "AGPL-3.0-only",
-  "scripts": {
-    "start": "node --use-strict --watch --trace-uncaught --disable-warning=ExperimentalWarning ./index.ts",
-    "scratchpad": "node --use-strict --watch --trace-uncaught --disable-warning=ExperimentalWarning ./scratchpad.ts",
-    "scratchpad2": "node --use-strict --watch --trace-uncaught --disable-warning=ExperimentalWarning ./scratchpad2.ts",
-    "scratchpad3": "node --use-strict --watch --trace-uncaught --disable-warning=ExperimentalWarning ./scratchpad3.ts",
-    "build": "./scripts/build.sh"
-  },
   "devDependencies": {
     "@stryker-mutator/vitest-runner": "^9.0.1",
     "@total-typescript/ts-reset": "^0.6.1",
@@ -43,6 +36,11 @@
     }
   ],
   "dependencies": {
-    "constructs": "^10.4.2"
+    "@effect/language-service": "^0.16.3",
+    "constructs": "^10.4.2",
+    "effect": "^3.15.2",
+    "long": "^5.3.2",
+    "protobufjs": "^7.5.2",
+    "ts-proto": "^2.7.0"
   }
 }

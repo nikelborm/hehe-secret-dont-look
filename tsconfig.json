@@ -79,12 +79,13 @@
   "exclude": [
     ".github",
     ".stryker-tmp",
-    "experiment-1",
-    "buildkit",
     ".vscode",
+    "buildkit",
     "dist",
+    "experiment-1",
     "gh-page",
     "node_modules",
+    "the-moby-effect",
     "reports",
     "tmp",
     "vite.config.ts"
