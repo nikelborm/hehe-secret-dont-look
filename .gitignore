@@ -3,3 +3,5 @@ node_modules
 buildkit
 dist
 the-moby-effect
+ts-proto/
+tmp
