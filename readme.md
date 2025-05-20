@@ -1,13 +1,19 @@
 # Rules of this repo
 
-1. no tests
-2. no documentation
-3. no distractions
-4. no automation
-5. no sidetracking
-6. no linting
-7. no thinking
-8. no restrictions
-9. no looking at the source code
-10. no starring
-11. no rules
+- no tests
+- no documentation
+- no distractions
+- no automation
+- no sidetracking
+- no quality control
+- no publishing
+- no maintenance
+- no order
+- no system
+- no organization
+- no linting
+- no thinking
+- no restrictions
+- no looking at the source code
+- no starring
+- no rules
