@@ -41,5 +41,8 @@
       "email": "evadev@duck.com",
       "url": "https://github.com/nikelborm"
     }
-  ]
+  ],
+  "dependencies": {
+    "constructs": "^10.4.2"
+  }
 }
