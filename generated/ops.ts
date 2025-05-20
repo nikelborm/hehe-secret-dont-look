@@ -5,9 +5,9 @@
 // source: ops.proto
 
 /* eslint-disable */
-import { BinaryReader, BinaryWriter } from "@bufbuild/protobuf/wire";
+import { BinaryReader, BinaryWriter } from '@bufbuild/protobuf/wire';
 
-export const protobufPackage = "pb";
+export const protobufPackage = 'pb';
 
 export const NetMode = {
   /** UNSET - sandbox */
@@ -17,21 +17,28 @@ export const NetMode = {
   UNRECOGNIZED: -1,
 } as const;
 
-type NetMode = (typeof NetMode)[keyof typeof NetMode];
+export type NetMode = (typeof NetMode)[keyof typeof NetMode];
+
+export namespace NetMode {
+  export type UNSET = typeof NetMode.UNSET;
+  export type HOST = typeof NetMode.HOST;
+  export type NONE = typeof NetMode.NONE;
+  export type UNRECOGNIZED = typeof NetMode.UNRECOGNIZED;
+}
 
 export function netModeFromJSON(object: any): NetMode {
   switch (object) {
     case 0:
-    case "UNSET":
+    case 'UNSET':
       return NetMode.UNSET;
     case 1:
-    case "HOST":
+    case 'HOST':
       return NetMode.HOST;
     case 2:
-    case "NONE":
+    case 'NONE':
       return NetMode.NONE;
     case -1:
-    case "UNRECOGNIZED":
+    case 'UNRECOGNIZED':
     default:
       return NetMode.UNRECOGNIZED;
   }
@@ -40,14 +47,14 @@ export function netModeFromJSON(object: any): NetMode {
 export function netModeToJSON(object: NetMode): string {
   switch (object) {
     case NetMode.UNSET:
-      return "UNSET";
+      return 'UNSET';
     case NetMode.HOST:
-      return "HOST";
+      return 'HOST';
     case NetMode.NONE:
-      return "NONE";
+      return 'NONE';
     case NetMode.UNRECOGNIZED:
     default:
-      return "UNRECOGNIZED";
+      return 'UNRECOGNIZED';
   }
 }
 
@@ -58,18 +65,24 @@ export const SecurityMode = {
   UNRECOGNIZED: -1,
 } as const;
 
-type SecurityMode = (typeof SecurityMode)[keyof typeof SecurityMode];
+export type SecurityMode = (typeof SecurityMode)[keyof typeof SecurityMode];
+
+export namespace SecurityMode {
+  export type SANDBOX = typeof SecurityMode.SANDBOX;
+  export type INSECURE = typeof SecurityMode.INSECURE;
+  export type UNRECOGNIZED = typeof SecurityMode.UNRECOGNIZED;
+}
 
 export function securityModeFromJSON(object: any): SecurityMode {
   switch (object) {
     case 0:
-    case "SANDBOX":
+    case 'SANDBOX':
       return SecurityMode.SANDBOX;
     case 1:
-    case "INSECURE":
+    case 'INSECURE':
       return SecurityMode.INSECURE;
     case -1:
-    case "UNRECOGNIZED":
+    case 'UNRECOGNIZED':
     default:
       return SecurityMode.UNRECOGNIZED;
   }
@@ -78,12 +91,12 @@ export function securityModeFromJSON(object: any): SecurityMode {
 export function securityModeToJSON(object: SecurityMode): string {
   switch (object) {
     case SecurityMode.SANDBOX:
-      return "SANDBOX";
+      return 'SANDBOX';
     case SecurityMode.INSECURE:
-      return "INSECURE";
+      return 'INSECURE';
     case SecurityMode.UNRECOGNIZED:
     default:
-      return "UNRECOGNIZED";
+      return 'UNRECOGNIZED';
   }
 }
 
@@ -97,27 +110,36 @@ export const MountType = {
   UNRECOGNIZED: -1,
 } as const;
 
-type MountType = (typeof MountType)[keyof typeof MountType];
+export type MountType = (typeof MountType)[keyof typeof MountType];
+
+export namespace MountType {
+  export type BIND = typeof MountType.BIND;
+  export type SECRET = typeof MountType.SECRET;
+  export type SSH = typeof MountType.SSH;
+  export type CACHE = typeof MountType.CACHE;
+  export type TMPFS = typeof MountType.TMPFS;
+  export type UNRECOGNIZED = typeof MountType.UNRECOGNIZED;
+}
 
 export function mountTypeFromJSON(object: any): MountType {
   switch (object) {
     case 0:
-    case "BIND":
+    case 'BIND':
       return MountType.BIND;
     case 1:
-    case "SECRET":
+    case 'SECRET':
       return MountType.SECRET;
     case 2:
-    case "SSH":
+    case 'SSH':
       return MountType.SSH;
     case 3:
-    case "CACHE":
+    case 'CACHE':
       return MountType.CACHE;
     case 4:
-    case "TMPFS":
+    case 'TMPFS':
       return MountType.TMPFS;
     case -1:
-    case "UNRECOGNIZED":
+    case 'UNRECOGNIZED':
     default:
       return MountType.UNRECOGNIZED;
   }
@@ -126,18 +148,18 @@ export function mountTypeFromJSON(object: any): MountType {
 export function mountTypeToJSON(object: MountType): string {
   switch (object) {
     case MountType.BIND:
-      return "BIND";
+      return 'BIND';
     case MountType.SECRET:
-      return "SECRET";
+      return 'SECRET';
     case MountType.SSH:
-      return "SSH";
+      return 'SSH';
     case MountType.CACHE:
-      return "CACHE";
+      return 'CACHE';
     case MountType.TMPFS:
-      return "TMPFS";
+      return 'TMPFS';
     case MountType.UNRECOGNIZED:
     default:
-      return "UNRECOGNIZED";
+      return 'UNRECOGNIZED';
   }
 }
 
@@ -149,22 +171,29 @@ export const MountContentCache = {
   UNRECOGNIZED: -1,
 } as const;
 
-type MountContentCache =
+export type MountContentCache =
   (typeof MountContentCache)[keyof typeof MountContentCache];
+
+export namespace MountContentCache {
+  export type DEFAULT = typeof MountContentCache.DEFAULT;
+  export type ON = typeof MountContentCache.ON;
+  export type OFF = typeof MountContentCache.OFF;
+  export type UNRECOGNIZED = typeof MountContentCache.UNRECOGNIZED;
+}
 
 export function mountContentCacheFromJSON(object: any): MountContentCache {
   switch (object) {
     case 0:
-    case "DEFAULT":
+    case 'DEFAULT':
       return MountContentCache.DEFAULT;
     case 1:
-    case "ON":
+    case 'ON':
       return MountContentCache.ON;
     case 2:
-    case "OFF":
+    case 'OFF':
       return MountContentCache.OFF;
     case -1:
-    case "UNRECOGNIZED":
+    case 'UNRECOGNIZED':
     default:
       return MountContentCache.UNRECOGNIZED;
   }
@@ -173,14 +202,14 @@ export function mountContentCacheFromJSON(object: any): MountContentCache {
 export function mountContentCacheToJSON(object: MountContentCache): string {
   switch (object) {
     case MountContentCache.DEFAULT:
-      return "DEFAULT";
+      return 'DEFAULT';
     case MountContentCache.ON:
-      return "ON";
+      return 'ON';
     case MountContentCache.OFF:
-      return "OFF";
+      return 'OFF';
     case MountContentCache.UNRECOGNIZED:
     default:
-      return "UNRECOGNIZED";
+      return 'UNRECOGNIZED';
   }
 }
 
@@ -193,23 +222,31 @@ export const CacheSharingOpt = {
   /** LOCKED - LOCKED pauses second writer until first one releases the mount */
   LOCKED: 2,
   UNRECOGNIZED: -1,
-};
+} as const;
 
-type CacheSharingOpt = (typeof CacheSharingOpt)[keyof typeof CacheSharingOpt];
+export type CacheSharingOpt =
+  (typeof CacheSharingOpt)[keyof typeof CacheSharingOpt];
+
+export namespace CacheSharingOpt {
+  export type SHARED = typeof CacheSharingOpt.SHARED;
+  export type PRIVATE = typeof CacheSharingOpt.PRIVATE;
+  export type LOCKED = typeof CacheSharingOpt.LOCKED;
+  export type UNRECOGNIZED = typeof CacheSharingOpt.UNRECOGNIZED;
+}
 
 export function cacheSharingOptFromJSON(object: any): CacheSharingOpt {
   switch (object) {
     case 0:
-    case "SHARED":
+    case 'SHARED':
       return CacheSharingOpt.SHARED;
     case 1:
-    case "PRIVATE":
+    case 'PRIVATE':
       return CacheSharingOpt.PRIVATE;
     case 2:
-    case "LOCKED":
+    case 'LOCKED':
       return CacheSharingOpt.LOCKED;
     case -1:
-    case "UNRECOGNIZED":
+    case 'UNRECOGNIZED':
     default:
       return CacheSharingOpt.UNRECOGNIZED;
   }
@@ -218,14 +255,14 @@ export function cacheSharingOptFromJSON(object: any): CacheSharingOpt {
 export function cacheSharingOptToJSON(object: CacheSharingOpt): string {
   switch (object) {
     case CacheSharingOpt.SHARED:
-      return "SHARED";
+      return 'SHARED';
     case CacheSharingOpt.PRIVATE:
-      return "PRIVATE";
+      return 'PRIVATE';
     case CacheSharingOpt.LOCKED:
-      return "LOCKED";
+      return 'LOCKED';
     case CacheSharingOpt.UNRECOGNIZED:
     default:
-      return "UNRECOGNIZED";
+      return 'UNRECOGNIZED';
   }
 }
 
@@ -237,12 +274,12 @@ export interface Op {
    */
   inputs: Input[];
   op?:
-    | { $case: "exec"; exec: ExecOp }
-    | { $case: "source"; source: SourceOp }
-    | { $case: "file"; file: FileOp }
-    | { $case: "build"; build: BuildOp }
-    | { $case: "merge"; merge: MergeOp }
-    | { $case: "diff"; diff: DiffOp }
+    | { $case: 'exec'; exec: ExecOp }
+    | { $case: 'source'; source: SourceOp }
+    | { $case: 'file'; file: FileOp }
+    | { $case: 'build'; build: BuildOp }
+    | { $case: 'merge'; merge: MergeOp }
+    | { $case: 'diff'; diff: DiffOp }
     | undefined;
   platform: Platform | undefined;
   constraints: WorkerConstraints | undefined;
@@ -553,15 +590,15 @@ export interface FileAction {
   action?:
     | //
     /** FileActionCopy copies files from secondaryInput on top of input */
-    { $case: "copy"; copy: FileActionCopy } //
+    { $case: 'copy'; copy: FileActionCopy } //
     /** FileActionMkFile creates a new file */
-    | { $case: "mkfile"; mkfile: FileActionMkFile } //
+    | { $case: 'mkfile'; mkfile: FileActionMkFile } //
     /** FileActionMkDir creates a new directory */
-    | { $case: "mkdir"; mkdir: FileActionMkDir } //
+    | { $case: 'mkdir'; mkdir: FileActionMkDir } //
     /** FileActionRm removes a file */
-    | { $case: "rm"; rm: FileActionRm } //
+    | { $case: 'rm'; rm: FileActionRm } //
     /** FileActionSymlink creates a symlink */
-    | { $case: "symlink"; symlink: FileActionSymlink }
+    | { $case: 'symlink'; symlink: FileActionSymlink }
     | undefined;
 }
 
@@ -652,8 +689,8 @@ export interface ChownOpt {
 export interface UserOpt {
   /** changes to this structure must be represented in json.go. */
   user?:
-    | { $case: "byName"; byName: NamedUserOpt }
-    | { $case: "byID"; byID: number }
+    | { $case: 'byName'; byName: NamedUserOpt }
+    | { $case: 'byID'; byID: number }
     | undefined;
 }
 
@@ -698,22 +735,22 @@ export const Op: MessageFns<Op> = {
       Input.encode(v!, writer.uint32(10).fork()).join();
     }
     switch (message.op?.$case) {
-      case "exec":
+      case 'exec':
         ExecOp.encode(message.op.exec, writer.uint32(18).fork()).join();
         break;
-      case "source":
+      case 'source':
         SourceOp.encode(message.op.source, writer.uint32(26).fork()).join();
         break;
-      case "file":
+      case 'file':
         FileOp.encode(message.op.file, writer.uint32(34).fork()).join();
         break;
-      case "build":
+      case 'build':
         BuildOp.encode(message.op.build, writer.uint32(42).fork()).join();
         break;
-      case "merge":
+      case 'merge':
         MergeOp.encode(message.op.merge, writer.uint32(50).fork()).join();
         break;
-      case "diff":
+      case 'diff':
         DiffOp.encode(message.op.diff, writer.uint32(58).fork()).join();
         break;
     }
@@ -723,7 +760,7 @@ export const Op: MessageFns<Op> = {
     if (message.constraints !== undefined) {
       WorkerConstraints.encode(
         message.constraints,
-        writer.uint32(90).fork()
+        writer.uint32(90).fork(),
       ).join();
     }
     return writer;
@@ -751,7 +788,7 @@ export const Op: MessageFns<Op> = {
           }
 
           message.op = {
-            $case: "exec",
+            $case: 'exec',
             exec: ExecOp.decode(reader, reader.uint32()),
           };
           continue;
@@ -762,7 +799,7 @@ export const Op: MessageFns<Op> = {
           }
 
           message.op = {
-            $case: "source",
+            $case: 'source',
             source: SourceOp.decode(reader, reader.uint32()),
           };
           continue;
@@ -773,7 +810,7 @@ export const Op: MessageFns<Op> = {
           }
 
           message.op = {
-            $case: "file",
+            $case: 'file',
             file: FileOp.decode(reader, reader.uint32()),
           };
           continue;
@@ -784,7 +821,7 @@ export const Op: MessageFns<Op> = {
           }
 
           message.op = {
-            $case: "build",
+            $case: 'build',
             build: BuildOp.decode(reader, reader.uint32()),
           };
           continue;
@@ -795,7 +832,7 @@ export const Op: MessageFns<Op> = {
           }
 
           message.op = {
-            $case: "merge",
+            $case: 'merge',
             merge: MergeOp.decode(reader, reader.uint32()),
           };
           continue;
@@ -806,7 +843,7 @@ export const Op: MessageFns<Op> = {
           }
 
           message.op = {
-            $case: "diff",
+            $case: 'diff',
             diff: DiffOp.decode(reader, reader.uint32()),
           };
           continue;
@@ -826,7 +863,7 @@ export const Op: MessageFns<Op> = {
 
           message.constraints = WorkerConstraints.decode(
             reader,
-            reader.uint32()
+            reader.uint32(),
           );
           continue;
         }
@@ -845,17 +882,17 @@ export const Op: MessageFns<Op> = {
         ? object.inputs.map((e: any) => Input.fromJSON(e))
         : [],
       op: isSet(object.exec)
-        ? { $case: "exec", exec: ExecOp.fromJSON(object.exec) }
+        ? { $case: 'exec', exec: ExecOp.fromJSON(object.exec) }
         : isSet(object.source)
-          ? { $case: "source", source: SourceOp.fromJSON(object.source) }
+          ? { $case: 'source', source: SourceOp.fromJSON(object.source) }
           : isSet(object.file)
-            ? { $case: "file", file: FileOp.fromJSON(object.file) }
+            ? { $case: 'file', file: FileOp.fromJSON(object.file) }
             : isSet(object.build)
-              ? { $case: "build", build: BuildOp.fromJSON(object.build) }
+              ? { $case: 'build', build: BuildOp.fromJSON(object.build) }
               : isSet(object.merge)
-                ? { $case: "merge", merge: MergeOp.fromJSON(object.merge) }
+                ? { $case: 'merge', merge: MergeOp.fromJSON(object.merge) }
                 : isSet(object.diff)
-                  ? { $case: "diff", diff: DiffOp.fromJSON(object.diff) }
+                  ? { $case: 'diff', diff: DiffOp.fromJSON(object.diff) }
                   : undefined,
       platform: isSet(object.platform)
         ? Platform.fromJSON(object.platform)
@@ -869,19 +906,19 @@ export const Op: MessageFns<Op> = {
   toJSON(message: Op): unknown {
     const obj: any = {};
     if (message.inputs?.length) {
-      obj.inputs = message.inputs.map((e) => Input.toJSON(e));
+      obj.inputs = message.inputs.map(e => Input.toJSON(e));
     }
-    if (message.op?.$case === "exec") {
+    if (message.op?.$case === 'exec') {
       obj.exec = ExecOp.toJSON(message.op.exec);
-    } else if (message.op?.$case === "source") {
+    } else if (message.op?.$case === 'source') {
       obj.source = SourceOp.toJSON(message.op.source);
-    } else if (message.op?.$case === "file") {
+    } else if (message.op?.$case === 'file') {
       obj.file = FileOp.toJSON(message.op.file);
-    } else if (message.op?.$case === "build") {
+    } else if (message.op?.$case === 'build') {
       obj.build = BuildOp.toJSON(message.op.build);
-    } else if (message.op?.$case === "merge") {
+    } else if (message.op?.$case === 'merge') {
       obj.merge = MergeOp.toJSON(message.op.merge);
-    } else if (message.op?.$case === "diff") {
+    } else if (message.op?.$case === 'diff') {
       obj.diff = DiffOp.toJSON(message.op.diff);
     }
     if (message.platform !== undefined) {
@@ -898,57 +935,57 @@ export const Op: MessageFns<Op> = {
   },
   fromPartial<I extends Exact<DeepPartial<Op>, I>>(object: I): Op {
     const message = createBaseOp();
-    message.inputs = object.inputs?.map((e) => Input.fromPartial(e)) || [];
+    message.inputs = object.inputs?.map(e => Input.fromPartial(e)) || [];
     switch (object.op?.$case) {
-      case "exec": {
+      case 'exec': {
         if (object.op?.exec !== undefined && object.op?.exec !== null) {
           message.op = {
-            $case: "exec",
+            $case: 'exec',
             exec: ExecOp.fromPartial(object.op.exec),
           };
         }
         break;
       }
-      case "source": {
+      case 'source': {
         if (object.op?.source !== undefined && object.op?.source !== null) {
           message.op = {
-            $case: "source",
+            $case: 'source',
             source: SourceOp.fromPartial(object.op.source),
           };
         }
         break;
       }
-      case "file": {
+      case 'file': {
         if (object.op?.file !== undefined && object.op?.file !== null) {
           message.op = {
-            $case: "file",
+            $case: 'file',
             file: FileOp.fromPartial(object.op.file),
           };
         }
         break;
       }
-      case "build": {
+      case 'build': {
         if (object.op?.build !== undefined && object.op?.build !== null) {
           message.op = {
-            $case: "build",
+            $case: 'build',
             build: BuildOp.fromPartial(object.op.build),
           };
         }
         break;
       }
-      case "merge": {
+      case 'merge': {
         if (object.op?.merge !== undefined && object.op?.merge !== null) {
           message.op = {
-            $case: "merge",
+            $case: 'merge',
             merge: MergeOp.fromPartial(object.op.merge),
           };
         }
         break;
       }
-      case "diff": {
+      case 'diff': {
         if (object.op?.diff !== undefined && object.op?.diff !== null) {
           message.op = {
-            $case: "diff",
+            $case: 'diff',
             diff: DiffOp.fromPartial(object.op.diff),
           };
         }
@@ -969,10 +1006,10 @@ export const Op: MessageFns<Op> = {
 
 function createBasePlatform(): Platform {
   return {
-    Architecture: "",
-    OS: "",
-    Variant: "",
-    OSVersion: "",
+    Architecture: '',
+    OS: '',
+    Variant: '',
+    OSVersion: '',
     OSFeatures: [],
   };
 }
@@ -980,18 +1017,18 @@ function createBasePlatform(): Platform {
 export const Platform: MessageFns<Platform> = {
   encode(
     message: Platform,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.Architecture !== "") {
+    if (message.Architecture !== '') {
       writer.uint32(10).string(message.Architecture);
     }
-    if (message.OS !== "") {
+    if (message.OS !== '') {
       writer.uint32(18).string(message.OS);
     }
-    if (message.Variant !== "") {
+    if (message.Variant !== '') {
       writer.uint32(26).string(message.Variant);
     }
-    if (message.OSVersion !== "") {
+    if (message.OSVersion !== '') {
       writer.uint32(34).string(message.OSVersion);
     }
     for (const v of message.OSFeatures) {
@@ -1061,12 +1098,12 @@ export const Platform: MessageFns<Platform> = {
     return {
       Architecture: isSet(object.Architecture)
         ? globalThis.String(object.Architecture)
-        : "",
-      OS: isSet(object.OS) ? globalThis.String(object.OS) : "",
-      Variant: isSet(object.Variant) ? globalThis.String(object.Variant) : "",
+        : '',
+      OS: isSet(object.OS) ? globalThis.String(object.OS) : '',
+      Variant: isSet(object.Variant) ? globalThis.String(object.Variant) : '',
       OSVersion: isSet(object.OSVersion)
         ? globalThis.String(object.OSVersion)
-        : "",
+        : '',
       OSFeatures: globalThis.Array.isArray(object?.OSFeatures)
         ? object.OSFeatures.map((e: any) => globalThis.String(e))
         : [],
@@ -1075,16 +1112,16 @@ export const Platform: MessageFns<Platform> = {
 
   toJSON(message: Platform): unknown {
     const obj: any = {};
-    if (message.Architecture !== "") {
+    if (message.Architecture !== '') {
       obj.Architecture = message.Architecture;
     }
-    if (message.OS !== "") {
+    if (message.OS !== '') {
       obj.OS = message.OS;
     }
-    if (message.Variant !== "") {
+    if (message.Variant !== '') {
       obj.Variant = message.Variant;
     }
-    if (message.OSVersion !== "") {
+    if (message.OSVersion !== '') {
       obj.OSVersion = message.OSVersion;
     }
     if (message.OSFeatures?.length) {
@@ -1098,25 +1135,25 @@ export const Platform: MessageFns<Platform> = {
   },
   fromPartial<I extends Exact<DeepPartial<Platform>, I>>(object: I): Platform {
     const message = createBasePlatform();
-    message.Architecture = object.Architecture ?? "";
-    message.OS = object.OS ?? "";
-    message.Variant = object.Variant ?? "";
-    message.OSVersion = object.OSVersion ?? "";
-    message.OSFeatures = object.OSFeatures?.map((e) => e) || [];
+    message.Architecture = object.Architecture ?? '';
+    message.OS = object.OS ?? '';
+    message.Variant = object.Variant ?? '';
+    message.OSVersion = object.OSVersion ?? '';
+    message.OSFeatures = object.OSFeatures?.map(e => e) || [];
     return message;
   },
 };
 
 function createBaseInput(): Input {
-  return { digest: "", index: 0 };
+  return { digest: '', index: 0 };
 }
 
 export const Input: MessageFns<Input> = {
   encode(
     message: Input,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.digest !== "") {
+    if (message.digest !== '') {
       writer.uint32(10).string(message.digest);
     }
     if (message.index !== 0) {
@@ -1160,14 +1197,14 @@ export const Input: MessageFns<Input> = {
 
   fromJSON(object: any): Input {
     return {
-      digest: isSet(object.digest) ? globalThis.String(object.digest) : "",
+      digest: isSet(object.digest) ? globalThis.String(object.digest) : '',
       index: isSet(object.index) ? globalThis.Number(object.index) : 0,
     };
   },
 
   toJSON(message: Input): unknown {
     const obj: any = {};
-    if (message.digest !== "") {
+    if (message.digest !== '') {
       obj.digest = message.digest;
     }
     if (message.index !== 0) {
@@ -1181,7 +1218,7 @@ export const Input: MessageFns<Input> = {
   },
   fromPartial<I extends Exact<DeepPartial<Input>, I>>(object: I): Input {
     const message = createBaseInput();
-    message.digest = object.digest ?? "";
+    message.digest = object.digest ?? '';
     message.index = object.index ?? 0;
     return message;
   },
@@ -1201,7 +1238,7 @@ function createBaseExecOp(): ExecOp {
 export const ExecOp: MessageFns<ExecOp> = {
   encode(
     message: ExecOp,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.meta !== undefined) {
       Meta.encode(message.meta, writer.uint32(10).fork()).join();
@@ -1314,7 +1351,7 @@ export const ExecOp: MessageFns<ExecOp> = {
       obj.meta = Meta.toJSON(message.meta);
     }
     if (message.mounts?.length) {
-      obj.mounts = message.mounts.map((e) => Mount.toJSON(e));
+      obj.mounts = message.mounts.map(e => Mount.toJSON(e));
     }
     if (message.network !== 0) {
       obj.network = netModeToJSON(message.network);
@@ -1323,10 +1360,10 @@ export const ExecOp: MessageFns<ExecOp> = {
       obj.security = securityModeToJSON(message.security);
     }
     if (message.secretenv?.length) {
-      obj.secretenv = message.secretenv.map((e) => SecretEnv.toJSON(e));
+      obj.secretenv = message.secretenv.map(e => SecretEnv.toJSON(e));
     }
     if (message.cdiDevices?.length) {
-      obj.cdiDevices = message.cdiDevices.map((e) => CDIDevice.toJSON(e));
+      obj.cdiDevices = message.cdiDevices.map(e => CDIDevice.toJSON(e));
     }
     return obj;
   },
@@ -1340,13 +1377,13 @@ export const ExecOp: MessageFns<ExecOp> = {
       object.meta !== undefined && object.meta !== null
         ? Meta.fromPartial(object.meta)
         : undefined;
-    message.mounts = object.mounts?.map((e) => Mount.fromPartial(e)) || [];
+    message.mounts = object.mounts?.map(e => Mount.fromPartial(e)) || [];
     message.network = object.network ?? 0;
     message.security = object.security ?? 0;
     message.secretenv =
-      object.secretenv?.map((e) => SecretEnv.fromPartial(e)) || [];
+      object.secretenv?.map(e => SecretEnv.fromPartial(e)) || [];
     message.cdiDevices =
-      object.cdiDevices?.map((e) => CDIDevice.fromPartial(e)) || [];
+      object.cdiDevices?.map(e => CDIDevice.fromPartial(e)) || [];
     return message;
   },
 };
@@ -1355,13 +1392,13 @@ function createBaseMeta(): Meta {
   return {
     args: [],
     env: [],
-    cwd: "",
-    user: "",
+    cwd: '',
+    user: '',
     proxyEnv: undefined,
     extraHosts: [],
-    hostname: "",
+    hostname: '',
     ulimit: [],
-    cgroupParent: "",
+    cgroupParent: '',
     removeMountStubsRecursive: false,
     validExitCodes: [],
   };
@@ -1370,7 +1407,7 @@ function createBaseMeta(): Meta {
 export const Meta: MessageFns<Meta> = {
   encode(
     message: Meta,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     for (const v of message.args) {
       writer.uint32(10).string(v!);
@@ -1378,10 +1415,10 @@ export const Meta: MessageFns<Meta> = {
     for (const v of message.env) {
       writer.uint32(18).string(v!);
     }
-    if (message.cwd !== "") {
+    if (message.cwd !== '') {
       writer.uint32(26).string(message.cwd);
     }
-    if (message.user !== "") {
+    if (message.user !== '') {
       writer.uint32(34).string(message.user);
     }
     if (message.proxyEnv !== undefined) {
@@ -1390,13 +1427,13 @@ export const Meta: MessageFns<Meta> = {
     for (const v of message.extraHosts) {
       HostIP.encode(v!, writer.uint32(50).fork()).join();
     }
-    if (message.hostname !== "") {
+    if (message.hostname !== '') {
       writer.uint32(58).string(message.hostname);
     }
     for (const v of message.ulimit) {
       Ulimit.encode(v!, writer.uint32(74).fork()).join();
     }
-    if (message.cgroupParent !== "") {
+    if (message.cgroupParent !== '') {
       writer.uint32(82).string(message.cgroupParent);
     }
     if (message.removeMountStubsRecursive !== false) {
@@ -1533,8 +1570,8 @@ export const Meta: MessageFns<Meta> = {
       env: globalThis.Array.isArray(object?.env)
         ? object.env.map((e: any) => globalThis.String(e))
         : [],
-      cwd: isSet(object.cwd) ? globalThis.String(object.cwd) : "",
-      user: isSet(object.user) ? globalThis.String(object.user) : "",
+      cwd: isSet(object.cwd) ? globalThis.String(object.cwd) : '',
+      user: isSet(object.user) ? globalThis.String(object.user) : '',
       proxyEnv: isSet(object.proxyEnv)
         ? ProxyEnv.fromJSON(object.proxyEnv)
         : undefined,
@@ -1543,13 +1580,13 @@ export const Meta: MessageFns<Meta> = {
         : [],
       hostname: isSet(object.hostname)
         ? globalThis.String(object.hostname)
-        : "",
+        : '',
       ulimit: globalThis.Array.isArray(object?.ulimit)
         ? object.ulimit.map((e: any) => Ulimit.fromJSON(e))
         : [],
       cgroupParent: isSet(object.cgroupParent)
         ? globalThis.String(object.cgroupParent)
-        : "",
+        : '',
       removeMountStubsRecursive: isSet(object.removeMountStubsRecursive)
         ? globalThis.Boolean(object.removeMountStubsRecursive)
         : false,
@@ -1567,32 +1604,32 @@ export const Meta: MessageFns<Meta> = {
     if (message.env?.length) {
       obj.env = message.env;
     }
-    if (message.cwd !== "") {
+    if (message.cwd !== '') {
       obj.cwd = message.cwd;
     }
-    if (message.user !== "") {
+    if (message.user !== '') {
       obj.user = message.user;
     }
     if (message.proxyEnv !== undefined) {
       obj.proxyEnv = ProxyEnv.toJSON(message.proxyEnv);
     }
     if (message.extraHosts?.length) {
-      obj.extraHosts = message.extraHosts.map((e) => HostIP.toJSON(e));
+      obj.extraHosts = message.extraHosts.map(e => HostIP.toJSON(e));
     }
-    if (message.hostname !== "") {
+    if (message.hostname !== '') {
       obj.hostname = message.hostname;
     }
     if (message.ulimit?.length) {
-      obj.ulimit = message.ulimit.map((e) => Ulimit.toJSON(e));
+      obj.ulimit = message.ulimit.map(e => Ulimit.toJSON(e));
     }
-    if (message.cgroupParent !== "") {
+    if (message.cgroupParent !== '') {
       obj.cgroupParent = message.cgroupParent;
     }
     if (message.removeMountStubsRecursive !== false) {
       obj.removeMountStubsRecursive = message.removeMountStubsRecursive;
     }
     if (message.validExitCodes?.length) {
-      obj.validExitCodes = message.validExitCodes.map((e) => Math.round(e));
+      obj.validExitCodes = message.validExitCodes.map(e => Math.round(e));
     }
     return obj;
   },
@@ -1602,39 +1639,39 @@ export const Meta: MessageFns<Meta> = {
   },
   fromPartial<I extends Exact<DeepPartial<Meta>, I>>(object: I): Meta {
     const message = createBaseMeta();
-    message.args = object.args?.map((e) => e) || [];
-    message.env = object.env?.map((e) => e) || [];
-    message.cwd = object.cwd ?? "";
-    message.user = object.user ?? "";
+    message.args = object.args?.map(e => e) || [];
+    message.env = object.env?.map(e => e) || [];
+    message.cwd = object.cwd ?? '';
+    message.user = object.user ?? '';
     message.proxyEnv =
       object.proxyEnv !== undefined && object.proxyEnv !== null
         ? ProxyEnv.fromPartial(object.proxyEnv)
         : undefined;
     message.extraHosts =
-      object.extraHosts?.map((e) => HostIP.fromPartial(e)) || [];
-    message.hostname = object.hostname ?? "";
-    message.ulimit = object.ulimit?.map((e) => Ulimit.fromPartial(e)) || [];
-    message.cgroupParent = object.cgroupParent ?? "";
+      object.extraHosts?.map(e => HostIP.fromPartial(e)) || [];
+    message.hostname = object.hostname ?? '';
+    message.ulimit = object.ulimit?.map(e => Ulimit.fromPartial(e)) || [];
+    message.cgroupParent = object.cgroupParent ?? '';
     message.removeMountStubsRecursive =
       object.removeMountStubsRecursive ?? false;
-    message.validExitCodes = object.validExitCodes?.map((e) => e) || [];
+    message.validExitCodes = object.validExitCodes?.map(e => e) || [];
     return message;
   },
 };
 
 function createBaseHostIP(): HostIP {
-  return { Host: "", IP: "" };
+  return { Host: '', IP: '' };
 }
 
 export const HostIP: MessageFns<HostIP> = {
   encode(
     message: HostIP,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.Host !== "") {
+    if (message.Host !== '') {
       writer.uint32(10).string(message.Host);
     }
-    if (message.IP !== "") {
+    if (message.IP !== '') {
       writer.uint32(18).string(message.IP);
     }
     return writer;
@@ -1675,17 +1712,17 @@ export const HostIP: MessageFns<HostIP> = {
 
   fromJSON(object: any): HostIP {
     return {
-      Host: isSet(object.Host) ? globalThis.String(object.Host) : "",
-      IP: isSet(object.IP) ? globalThis.String(object.IP) : "",
+      Host: isSet(object.Host) ? globalThis.String(object.Host) : '',
+      IP: isSet(object.IP) ? globalThis.String(object.IP) : '',
     };
   },
 
   toJSON(message: HostIP): unknown {
     const obj: any = {};
-    if (message.Host !== "") {
+    if (message.Host !== '') {
       obj.Host = message.Host;
     }
-    if (message.IP !== "") {
+    if (message.IP !== '') {
       obj.IP = message.IP;
     }
     return obj;
@@ -1696,22 +1733,22 @@ export const HostIP: MessageFns<HostIP> = {
   },
   fromPartial<I extends Exact<DeepPartial<HostIP>, I>>(object: I): HostIP {
     const message = createBaseHostIP();
-    message.Host = object.Host ?? "";
-    message.IP = object.IP ?? "";
+    message.Host = object.Host ?? '';
+    message.IP = object.IP ?? '';
     return message;
   },
 };
 
 function createBaseUlimit(): Ulimit {
-  return { Name: "", Soft: 0, Hard: 0 };
+  return { Name: '', Soft: 0, Hard: 0 };
 }
 
 export const Ulimit: MessageFns<Ulimit> = {
   encode(
     message: Ulimit,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.Name !== "") {
+    if (message.Name !== '') {
       writer.uint32(10).string(message.Name);
     }
     if (message.Soft !== 0) {
@@ -1766,7 +1803,7 @@ export const Ulimit: MessageFns<Ulimit> = {
 
   fromJSON(object: any): Ulimit {
     return {
-      Name: isSet(object.Name) ? globalThis.String(object.Name) : "",
+      Name: isSet(object.Name) ? globalThis.String(object.Name) : '',
       Soft: isSet(object.Soft) ? globalThis.Number(object.Soft) : 0,
       Hard: isSet(object.Hard) ? globalThis.Number(object.Hard) : 0,
     };
@@ -1774,7 +1811,7 @@ export const Ulimit: MessageFns<Ulimit> = {
 
   toJSON(message: Ulimit): unknown {
     const obj: any = {};
-    if (message.Name !== "") {
+    if (message.Name !== '') {
       obj.Name = message.Name;
     }
     if (message.Soft !== 0) {
@@ -1791,7 +1828,7 @@ export const Ulimit: MessageFns<Ulimit> = {
   },
   fromPartial<I extends Exact<DeepPartial<Ulimit>, I>>(object: I): Ulimit {
     const message = createBaseUlimit();
-    message.Name = object.Name ?? "";
+    message.Name = object.Name ?? '';
     message.Soft = object.Soft ?? 0;
     message.Hard = object.Hard ?? 0;
     return message;
@@ -1799,18 +1836,18 @@ export const Ulimit: MessageFns<Ulimit> = {
 };
 
 function createBaseSecretEnv(): SecretEnv {
-  return { ID: "", name: "", optional: false };
+  return { ID: '', name: '', optional: false };
 }
 
 export const SecretEnv: MessageFns<SecretEnv> = {
   encode(
     message: SecretEnv,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.ID !== "") {
+    if (message.ID !== '') {
       writer.uint32(10).string(message.ID);
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(18).string(message.name);
     }
     if (message.optional !== false) {
@@ -1862,8 +1899,8 @@ export const SecretEnv: MessageFns<SecretEnv> = {
 
   fromJSON(object: any): SecretEnv {
     return {
-      ID: isSet(object.ID) ? globalThis.String(object.ID) : "",
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
+      ID: isSet(object.ID) ? globalThis.String(object.ID) : '',
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
       optional: isSet(object.optional)
         ? globalThis.Boolean(object.optional)
         : false,
@@ -1872,10 +1909,10 @@ export const SecretEnv: MessageFns<SecretEnv> = {
 
   toJSON(message: SecretEnv): unknown {
     const obj: any = {};
-    if (message.ID !== "") {
+    if (message.ID !== '') {
       obj.ID = message.ID;
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
     if (message.optional !== false) {
@@ -1888,26 +1925,26 @@ export const SecretEnv: MessageFns<SecretEnv> = {
     return SecretEnv.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<SecretEnv>, I>>(
-    object: I
+    object: I,
   ): SecretEnv {
     const message = createBaseSecretEnv();
-    message.ID = object.ID ?? "";
-    message.name = object.name ?? "";
+    message.ID = object.ID ?? '';
+    message.name = object.name ?? '';
     message.optional = object.optional ?? false;
     return message;
   },
 };
 
 function createBaseCDIDevice(): CDIDevice {
-  return { name: "", optional: false };
+  return { name: '', optional: false };
 }
 
 export const CDIDevice: MessageFns<CDIDevice> = {
   encode(
     message: CDIDevice,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(10).string(message.name);
     }
     if (message.optional !== false) {
@@ -1951,7 +1988,7 @@ export const CDIDevice: MessageFns<CDIDevice> = {
 
   fromJSON(object: any): CDIDevice {
     return {
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
       optional: isSet(object.optional)
         ? globalThis.Boolean(object.optional)
         : false,
@@ -1960,7 +1997,7 @@ export const CDIDevice: MessageFns<CDIDevice> = {
 
   toJSON(message: CDIDevice): unknown {
     const obj: any = {};
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
     if (message.optional !== false) {
@@ -1973,10 +2010,10 @@ export const CDIDevice: MessageFns<CDIDevice> = {
     return CDIDevice.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<CDIDevice>, I>>(
-    object: I
+    object: I,
   ): CDIDevice {
     const message = createBaseCDIDevice();
-    message.name = object.name ?? "";
+    message.name = object.name ?? '';
     message.optional = object.optional ?? false;
     return message;
   },
@@ -1985,8 +2022,8 @@ export const CDIDevice: MessageFns<CDIDevice> = {
 function createBaseMount(): Mount {
   return {
     input: 0,
-    selector: "",
-    dest: "",
+    selector: '',
+    dest: '',
     output: 0,
     readonly: false,
     mountType: 0,
@@ -1994,7 +2031,7 @@ function createBaseMount(): Mount {
     cacheOpt: undefined,
     secretOpt: undefined,
     SSHOpt: undefined,
-    resultID: "",
+    resultID: '',
     contentCache: 0,
   };
 }
@@ -2002,15 +2039,15 @@ function createBaseMount(): Mount {
 export const Mount: MessageFns<Mount> = {
   encode(
     message: Mount,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.input !== 0) {
       writer.uint32(8).int64(message.input);
     }
-    if (message.selector !== "") {
+    if (message.selector !== '') {
       writer.uint32(18).string(message.selector);
     }
-    if (message.dest !== "") {
+    if (message.dest !== '') {
       writer.uint32(26).string(message.dest);
     }
     if (message.output !== 0) {
@@ -2034,7 +2071,7 @@ export const Mount: MessageFns<Mount> = {
     if (message.SSHOpt !== undefined) {
       SSHOpt.encode(message.SSHOpt, writer.uint32(178).fork()).join();
     }
-    if (message.resultID !== "") {
+    if (message.resultID !== '') {
       writer.uint32(186).string(message.resultID);
     }
     if (message.contentCache !== 0) {
@@ -2161,8 +2198,8 @@ export const Mount: MessageFns<Mount> = {
       input: isSet(object.input) ? globalThis.Number(object.input) : 0,
       selector: isSet(object.selector)
         ? globalThis.String(object.selector)
-        : "",
-      dest: isSet(object.dest) ? globalThis.String(object.dest) : "",
+        : '',
+      dest: isSet(object.dest) ? globalThis.String(object.dest) : '',
       output: isSet(object.output) ? globalThis.Number(object.output) : 0,
       readonly: isSet(object.readonly)
         ? globalThis.Boolean(object.readonly)
@@ -2182,7 +2219,7 @@ export const Mount: MessageFns<Mount> = {
       SSHOpt: isSet(object.SSHOpt) ? SSHOpt.fromJSON(object.SSHOpt) : undefined,
       resultID: isSet(object.resultID)
         ? globalThis.String(object.resultID)
-        : "",
+        : '',
       contentCache: isSet(object.contentCache)
         ? mountContentCacheFromJSON(object.contentCache)
         : 0,
@@ -2194,10 +2231,10 @@ export const Mount: MessageFns<Mount> = {
     if (message.input !== 0) {
       obj.input = Math.round(message.input);
     }
-    if (message.selector !== "") {
+    if (message.selector !== '') {
       obj.selector = message.selector;
     }
-    if (message.dest !== "") {
+    if (message.dest !== '') {
       obj.dest = message.dest;
     }
     if (message.output !== 0) {
@@ -2221,7 +2258,7 @@ export const Mount: MessageFns<Mount> = {
     if (message.SSHOpt !== undefined) {
       obj.SSHOpt = SSHOpt.toJSON(message.SSHOpt);
     }
-    if (message.resultID !== "") {
+    if (message.resultID !== '') {
       obj.resultID = message.resultID;
     }
     if (message.contentCache !== 0) {
@@ -2236,8 +2273,8 @@ export const Mount: MessageFns<Mount> = {
   fromPartial<I extends Exact<DeepPartial<Mount>, I>>(object: I): Mount {
     const message = createBaseMount();
     message.input = object.input ?? 0;
-    message.selector = object.selector ?? "";
-    message.dest = object.dest ?? "";
+    message.selector = object.selector ?? '';
+    message.dest = object.dest ?? '';
     message.output = object.output ?? 0;
     message.readonly = object.readonly ?? false;
     message.mountType = object.mountType ?? 0;
@@ -2257,7 +2294,7 @@ export const Mount: MessageFns<Mount> = {
       object.SSHOpt !== undefined && object.SSHOpt !== null
         ? SSHOpt.fromPartial(object.SSHOpt)
         : undefined;
-    message.resultID = object.resultID ?? "";
+    message.resultID = object.resultID ?? '';
     message.contentCache = object.contentCache ?? 0;
     return message;
   },
@@ -2270,7 +2307,7 @@ function createBaseTmpfsOpt(): TmpfsOpt {
 export const TmpfsOpt: MessageFns<TmpfsOpt> = {
   encode(
     message: TmpfsOpt,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.size !== 0) {
       writer.uint32(8).int64(message.size);
@@ -2326,15 +2363,15 @@ export const TmpfsOpt: MessageFns<TmpfsOpt> = {
 };
 
 function createBaseCacheOpt(): CacheOpt {
-  return { ID: "", sharing: 0 };
+  return { ID: '', sharing: 0 };
 }
 
 export const CacheOpt: MessageFns<CacheOpt> = {
   encode(
     message: CacheOpt,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.ID !== "") {
+    if (message.ID !== '') {
       writer.uint32(10).string(message.ID);
     }
     if (message.sharing !== 0) {
@@ -2378,7 +2415,7 @@ export const CacheOpt: MessageFns<CacheOpt> = {
 
   fromJSON(object: any): CacheOpt {
     return {
-      ID: isSet(object.ID) ? globalThis.String(object.ID) : "",
+      ID: isSet(object.ID) ? globalThis.String(object.ID) : '',
       sharing: isSet(object.sharing)
         ? cacheSharingOptFromJSON(object.sharing)
         : 0,
@@ -2387,7 +2424,7 @@ export const CacheOpt: MessageFns<CacheOpt> = {
 
   toJSON(message: CacheOpt): unknown {
     const obj: any = {};
-    if (message.ID !== "") {
+    if (message.ID !== '') {
       obj.ID = message.ID;
     }
     if (message.sharing !== 0) {
@@ -2401,22 +2438,22 @@ export const CacheOpt: MessageFns<CacheOpt> = {
   },
   fromPartial<I extends Exact<DeepPartial<CacheOpt>, I>>(object: I): CacheOpt {
     const message = createBaseCacheOpt();
-    message.ID = object.ID ?? "";
+    message.ID = object.ID ?? '';
     message.sharing = object.sharing ?? 0;
     return message;
   },
 };
 
 function createBaseSecretOpt(): SecretOpt {
-  return { ID: "", uid: 0, gid: 0, mode: 0, optional: false };
+  return { ID: '', uid: 0, gid: 0, mode: 0, optional: false };
 }
 
 export const SecretOpt: MessageFns<SecretOpt> = {
   encode(
     message: SecretOpt,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.ID !== "") {
+    if (message.ID !== '') {
       writer.uint32(10).string(message.ID);
     }
     if (message.uid !== 0) {
@@ -2493,7 +2530,7 @@ export const SecretOpt: MessageFns<SecretOpt> = {
 
   fromJSON(object: any): SecretOpt {
     return {
-      ID: isSet(object.ID) ? globalThis.String(object.ID) : "",
+      ID: isSet(object.ID) ? globalThis.String(object.ID) : '',
       uid: isSet(object.uid) ? globalThis.Number(object.uid) : 0,
       gid: isSet(object.gid) ? globalThis.Number(object.gid) : 0,
       mode: isSet(object.mode) ? globalThis.Number(object.mode) : 0,
@@ -2505,7 +2542,7 @@ export const SecretOpt: MessageFns<SecretOpt> = {
 
   toJSON(message: SecretOpt): unknown {
     const obj: any = {};
-    if (message.ID !== "") {
+    if (message.ID !== '') {
       obj.ID = message.ID;
     }
     if (message.uid !== 0) {
@@ -2527,10 +2564,10 @@ export const SecretOpt: MessageFns<SecretOpt> = {
     return SecretOpt.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<SecretOpt>, I>>(
-    object: I
+    object: I,
   ): SecretOpt {
     const message = createBaseSecretOpt();
-    message.ID = object.ID ?? "";
+    message.ID = object.ID ?? '';
     message.uid = object.uid ?? 0;
     message.gid = object.gid ?? 0;
     message.mode = object.mode ?? 0;
@@ -2540,15 +2577,15 @@ export const SecretOpt: MessageFns<SecretOpt> = {
 };
 
 function createBaseSSHOpt(): SSHOpt {
-  return { ID: "", uid: 0, gid: 0, mode: 0, optional: false };
+  return { ID: '', uid: 0, gid: 0, mode: 0, optional: false };
 }
 
 export const SSHOpt: MessageFns<SSHOpt> = {
   encode(
     message: SSHOpt,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.ID !== "") {
+    if (message.ID !== '') {
       writer.uint32(10).string(message.ID);
     }
     if (message.uid !== 0) {
@@ -2625,7 +2662,7 @@ export const SSHOpt: MessageFns<SSHOpt> = {
 
   fromJSON(object: any): SSHOpt {
     return {
-      ID: isSet(object.ID) ? globalThis.String(object.ID) : "",
+      ID: isSet(object.ID) ? globalThis.String(object.ID) : '',
       uid: isSet(object.uid) ? globalThis.Number(object.uid) : 0,
       gid: isSet(object.gid) ? globalThis.Number(object.gid) : 0,
       mode: isSet(object.mode) ? globalThis.Number(object.mode) : 0,
@@ -2637,7 +2674,7 @@ export const SSHOpt: MessageFns<SSHOpt> = {
 
   toJSON(message: SSHOpt): unknown {
     const obj: any = {};
-    if (message.ID !== "") {
+    if (message.ID !== '') {
       obj.ID = message.ID;
     }
     if (message.uid !== 0) {
@@ -2660,7 +2697,7 @@ export const SSHOpt: MessageFns<SSHOpt> = {
   },
   fromPartial<I extends Exact<DeepPartial<SSHOpt>, I>>(object: I): SSHOpt {
     const message = createBaseSSHOpt();
-    message.ID = object.ID ?? "";
+    message.ID = object.ID ?? '';
     message.uid = object.uid ?? 0;
     message.gid = object.gid ?? 0;
     message.mode = object.mode ?? 0;
@@ -2670,21 +2707,21 @@ export const SSHOpt: MessageFns<SSHOpt> = {
 };
 
 function createBaseSourceOp(): SourceOp {
-  return { identifier: "", attrs: {} };
+  return { identifier: '', attrs: {} };
 }
 
 export const SourceOp: MessageFns<SourceOp> = {
   encode(
     message: SourceOp,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.identifier !== "") {
+    if (message.identifier !== '') {
       writer.uint32(10).string(message.identifier);
     }
     Object.entries(message.attrs).forEach(([key, value]) => {
       SourceOp_AttrsEntry.encode(
         { key: key as any, value },
-        writer.uint32(18).fork()
+        writer.uint32(18).fork(),
       ).join();
     });
     return writer;
@@ -2730,14 +2767,14 @@ export const SourceOp: MessageFns<SourceOp> = {
     return {
       identifier: isSet(object.identifier)
         ? globalThis.String(object.identifier)
-        : "",
+        : '',
       attrs: isObject(object.attrs)
         ? Object.entries(object.attrs).reduce<{ [key: string]: string }>(
             (acc, [key, value]) => {
               acc[key] = String(value);
               return acc;
             },
-            {}
+            {},
           )
         : {},
     };
@@ -2745,7 +2782,7 @@ export const SourceOp: MessageFns<SourceOp> = {
 
   toJSON(message: SourceOp): unknown {
     const obj: any = {};
-    if (message.identifier !== "") {
+    if (message.identifier !== '') {
       obj.identifier = message.identifier;
     }
     if (message.attrs) {
@@ -2765,7 +2802,7 @@ export const SourceOp: MessageFns<SourceOp> = {
   },
   fromPartial<I extends Exact<DeepPartial<SourceOp>, I>>(object: I): SourceOp {
     const message = createBaseSourceOp();
-    message.identifier = object.identifier ?? "";
+    message.identifier = object.identifier ?? '';
     message.attrs = Object.entries(object.attrs ?? {}).reduce<{
       [key: string]: string;
     }>((acc, [key, value]) => {
@@ -2779,18 +2816,18 @@ export const SourceOp: MessageFns<SourceOp> = {
 };
 
 function createBaseSourceOp_AttrsEntry(): SourceOp_AttrsEntry {
-  return { key: "", value: "" };
+  return { key: '', value: '' };
 }
 
 export const SourceOp_AttrsEntry: MessageFns<SourceOp_AttrsEntry> = {
   encode(
     message: SourceOp_AttrsEntry,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.key !== "") {
+    if (message.key !== '') {
       writer.uint32(10).string(message.key);
     }
-    if (message.value !== "") {
+    if (message.value !== '') {
       writer.uint32(18).string(message.value);
     }
     return writer;
@@ -2798,7 +2835,7 @@ export const SourceOp_AttrsEntry: MessageFns<SourceOp_AttrsEntry> = {
 
   decode(
     input: BinaryReader | Uint8Array,
-    length?: number
+    length?: number,
   ): SourceOp_AttrsEntry {
     const reader =
       input instanceof BinaryReader ? input : new BinaryReader(input);
@@ -2834,33 +2871,33 @@ export const SourceOp_AttrsEntry: MessageFns<SourceOp_AttrsEntry> = {
 
   fromJSON(object: any): SourceOp_AttrsEntry {
     return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
-      value: isSet(object.value) ? globalThis.String(object.value) : "",
+      key: isSet(object.key) ? globalThis.String(object.key) : '',
+      value: isSet(object.value) ? globalThis.String(object.value) : '',
     };
   },
 
   toJSON(message: SourceOp_AttrsEntry): unknown {
     const obj: any = {};
-    if (message.key !== "") {
+    if (message.key !== '') {
       obj.key = message.key;
     }
-    if (message.value !== "") {
+    if (message.value !== '') {
       obj.value = message.value;
     }
     return obj;
   },
 
   create<I extends Exact<DeepPartial<SourceOp_AttrsEntry>, I>>(
-    base?: I
+    base?: I,
   ): SourceOp_AttrsEntry {
     return SourceOp_AttrsEntry.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<SourceOp_AttrsEntry>, I>>(
-    object: I
+    object: I,
   ): SourceOp_AttrsEntry {
     const message = createBaseSourceOp_AttrsEntry();
-    message.key = object.key ?? "";
-    message.value = object.value ?? "";
+    message.key = object.key ?? '';
+    message.value = object.value ?? '';
     return message;
   },
 };
@@ -2872,7 +2909,7 @@ function createBaseBuildOp(): BuildOp {
 export const BuildOp: MessageFns<BuildOp> = {
   encode(
     message: BuildOp,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.builder !== 0) {
       writer.uint32(8).int64(message.builder);
@@ -2880,7 +2917,7 @@ export const BuildOp: MessageFns<BuildOp> = {
     Object.entries(message.inputs).forEach(([key, value]) => {
       BuildOp_InputsEntry.encode(
         { key: key as any, value },
-        writer.uint32(18).fork()
+        writer.uint32(18).fork(),
       ).join();
     });
     if (message.def !== undefined) {
@@ -2889,7 +2926,7 @@ export const BuildOp: MessageFns<BuildOp> = {
     Object.entries(message.attrs).forEach(([key, value]) => {
       BuildOp_AttrsEntry.encode(
         { key: key as any, value },
-        writer.uint32(34).fork()
+        writer.uint32(34).fork(),
       ).join();
     });
     return writer;
@@ -2959,7 +2996,7 @@ export const BuildOp: MessageFns<BuildOp> = {
               acc[key] = BuildInput.fromJSON(value);
               return acc;
             },
-            {}
+            {},
           )
         : {},
       def: isSet(object.def) ? Definition.fromJSON(object.def) : undefined,
@@ -2969,7 +3006,7 @@ export const BuildOp: MessageFns<BuildOp> = {
               acc[key] = String(value);
               return acc;
             },
-            {}
+            {},
           )
         : {},
     };
@@ -3035,15 +3072,15 @@ export const BuildOp: MessageFns<BuildOp> = {
 };
 
 function createBaseBuildOp_InputsEntry(): BuildOp_InputsEntry {
-  return { key: "", value: undefined };
+  return { key: '', value: undefined };
 }
 
 export const BuildOp_InputsEntry: MessageFns<BuildOp_InputsEntry> = {
   encode(
     message: BuildOp_InputsEntry,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.key !== "") {
+    if (message.key !== '') {
       writer.uint32(10).string(message.key);
     }
     if (message.value !== undefined) {
@@ -3054,7 +3091,7 @@ export const BuildOp_InputsEntry: MessageFns<BuildOp_InputsEntry> = {
 
   decode(
     input: BinaryReader | Uint8Array,
-    length?: number
+    length?: number,
   ): BuildOp_InputsEntry {
     const reader =
       input instanceof BinaryReader ? input : new BinaryReader(input);
@@ -3090,7 +3127,7 @@ export const BuildOp_InputsEntry: MessageFns<BuildOp_InputsEntry> = {
 
   fromJSON(object: any): BuildOp_InputsEntry {
     return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      key: isSet(object.key) ? globalThis.String(object.key) : '',
       value: isSet(object.value)
         ? BuildInput.fromJSON(object.value)
         : undefined,
@@ -3099,7 +3136,7 @@ export const BuildOp_InputsEntry: MessageFns<BuildOp_InputsEntry> = {
 
   toJSON(message: BuildOp_InputsEntry): unknown {
     const obj: any = {};
-    if (message.key !== "") {
+    if (message.key !== '') {
       obj.key = message.key;
     }
     if (message.value !== undefined) {
@@ -3109,15 +3146,15 @@ export const BuildOp_InputsEntry: MessageFns<BuildOp_InputsEntry> = {
   },
 
   create<I extends Exact<DeepPartial<BuildOp_InputsEntry>, I>>(
-    base?: I
+    base?: I,
   ): BuildOp_InputsEntry {
     return BuildOp_InputsEntry.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<BuildOp_InputsEntry>, I>>(
-    object: I
+    object: I,
   ): BuildOp_InputsEntry {
     const message = createBaseBuildOp_InputsEntry();
-    message.key = object.key ?? "";
+    message.key = object.key ?? '';
     message.value =
       object.value !== undefined && object.value !== null
         ? BuildInput.fromPartial(object.value)
@@ -3127,18 +3164,18 @@ export const BuildOp_InputsEntry: MessageFns<BuildOp_InputsEntry> = {
 };
 
 function createBaseBuildOp_AttrsEntry(): BuildOp_AttrsEntry {
-  return { key: "", value: "" };
+  return { key: '', value: '' };
 }
 
 export const BuildOp_AttrsEntry: MessageFns<BuildOp_AttrsEntry> = {
   encode(
     message: BuildOp_AttrsEntry,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.key !== "") {
+    if (message.key !== '') {
       writer.uint32(10).string(message.key);
     }
-    if (message.value !== "") {
+    if (message.value !== '') {
       writer.uint32(18).string(message.value);
     }
     return writer;
@@ -3146,7 +3183,7 @@ export const BuildOp_AttrsEntry: MessageFns<BuildOp_AttrsEntry> = {
 
   decode(
     input: BinaryReader | Uint8Array,
-    length?: number
+    length?: number,
   ): BuildOp_AttrsEntry {
     const reader =
       input instanceof BinaryReader ? input : new BinaryReader(input);
@@ -3182,33 +3219,33 @@ export const BuildOp_AttrsEntry: MessageFns<BuildOp_AttrsEntry> = {
 
   fromJSON(object: any): BuildOp_AttrsEntry {
     return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
-      value: isSet(object.value) ? globalThis.String(object.value) : "",
+      key: isSet(object.key) ? globalThis.String(object.key) : '',
+      value: isSet(object.value) ? globalThis.String(object.value) : '',
     };
   },
 
   toJSON(message: BuildOp_AttrsEntry): unknown {
     const obj: any = {};
-    if (message.key !== "") {
+    if (message.key !== '') {
       obj.key = message.key;
     }
-    if (message.value !== "") {
+    if (message.value !== '') {
       obj.value = message.value;
     }
     return obj;
   },
 
   create<I extends Exact<DeepPartial<BuildOp_AttrsEntry>, I>>(
-    base?: I
+    base?: I,
   ): BuildOp_AttrsEntry {
     return BuildOp_AttrsEntry.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<BuildOp_AttrsEntry>, I>>(
-    object: I
+    object: I,
   ): BuildOp_AttrsEntry {
     const message = createBaseBuildOp_AttrsEntry();
-    message.key = object.key ?? "";
-    message.value = object.value ?? "";
+    message.key = object.key ?? '';
+    message.value = object.value ?? '';
     return message;
   },
 };
@@ -3220,7 +3257,7 @@ function createBaseBuildInput(): BuildInput {
 export const BuildInput: MessageFns<BuildInput> = {
   encode(
     message: BuildInput,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.input !== 0) {
       writer.uint32(8).int64(message.input);
@@ -3269,7 +3306,7 @@ export const BuildInput: MessageFns<BuildInput> = {
     return BuildInput.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<BuildInput>, I>>(
-    object: I
+    object: I,
   ): BuildInput {
     const message = createBaseBuildInput();
     message.input = object.input ?? 0;
@@ -3290,7 +3327,7 @@ function createBaseOpMetadata(): OpMetadata {
 export const OpMetadata: MessageFns<OpMetadata> = {
   encode(
     message: OpMetadata,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.ignoreCache !== false) {
       writer.uint32(8).bool(message.ignoreCache);
@@ -3298,7 +3335,7 @@ export const OpMetadata: MessageFns<OpMetadata> = {
     Object.entries(message.description).forEach(([key, value]) => {
       OpMetadata_DescriptionEntry.encode(
         { key: key as any, value },
-        writer.uint32(18).fork()
+        writer.uint32(18).fork(),
       ).join();
     });
     if (message.exportCache !== undefined) {
@@ -3307,13 +3344,13 @@ export const OpMetadata: MessageFns<OpMetadata> = {
     Object.entries(message.caps).forEach(([key, value]) => {
       OpMetadata_CapsEntry.encode(
         { key: key as any, value },
-        writer.uint32(42).fork()
+        writer.uint32(42).fork(),
       ).join();
     });
     if (message.progressGroup !== undefined) {
       ProgressGroup.encode(
         message.progressGroup,
-        writer.uint32(50).fork()
+        writer.uint32(50).fork(),
       ).join();
     }
     return writer;
@@ -3342,7 +3379,7 @@ export const OpMetadata: MessageFns<OpMetadata> = {
 
           const entry2 = OpMetadata_DescriptionEntry.decode(
             reader,
-            reader.uint32()
+            reader.uint32(),
           );
           if (entry2.value !== undefined) {
             message.description[entry2.key] = entry2.value;
@@ -3396,7 +3433,7 @@ export const OpMetadata: MessageFns<OpMetadata> = {
               acc[key] = String(value);
               return acc;
             },
-            {}
+            {},
           )
         : {},
       exportCache: isSet(object.exportCache)
@@ -3408,7 +3445,7 @@ export const OpMetadata: MessageFns<OpMetadata> = {
               acc[key] = Boolean(value);
               return acc;
             },
-            {}
+            {},
           )
         : {},
       progressGroup: isSet(object.progressGroup)
@@ -3453,7 +3490,7 @@ export const OpMetadata: MessageFns<OpMetadata> = {
     return OpMetadata.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<OpMetadata>, I>>(
-    object: I
+    object: I,
   ): OpMetadata {
     const message = createBaseOpMetadata();
     message.ignoreCache = object.ignoreCache ?? false;
@@ -3486,19 +3523,19 @@ export const OpMetadata: MessageFns<OpMetadata> = {
 };
 
 function createBaseOpMetadata_DescriptionEntry(): OpMetadata_DescriptionEntry {
-  return { key: "", value: "" };
+  return { key: '', value: '' };
 }
 
 export const OpMetadata_DescriptionEntry: MessageFns<OpMetadata_DescriptionEntry> =
   {
     encode(
       message: OpMetadata_DescriptionEntry,
-      writer: BinaryWriter = new BinaryWriter()
+      writer: BinaryWriter = new BinaryWriter(),
     ): BinaryWriter {
-      if (message.key !== "") {
+      if (message.key !== '') {
         writer.uint32(10).string(message.key);
       }
-      if (message.value !== "") {
+      if (message.value !== '') {
         writer.uint32(18).string(message.value);
       }
       return writer;
@@ -3506,7 +3543,7 @@ export const OpMetadata_DescriptionEntry: MessageFns<OpMetadata_DescriptionEntry
 
     decode(
       input: BinaryReader | Uint8Array,
-      length?: number
+      length?: number,
     ): OpMetadata_DescriptionEntry {
       const reader =
         input instanceof BinaryReader ? input : new BinaryReader(input);
@@ -3542,47 +3579,47 @@ export const OpMetadata_DescriptionEntry: MessageFns<OpMetadata_DescriptionEntry
 
     fromJSON(object: any): OpMetadata_DescriptionEntry {
       return {
-        key: isSet(object.key) ? globalThis.String(object.key) : "",
-        value: isSet(object.value) ? globalThis.String(object.value) : "",
+        key: isSet(object.key) ? globalThis.String(object.key) : '',
+        value: isSet(object.value) ? globalThis.String(object.value) : '',
       };
     },
 
     toJSON(message: OpMetadata_DescriptionEntry): unknown {
       const obj: any = {};
-      if (message.key !== "") {
+      if (message.key !== '') {
         obj.key = message.key;
       }
-      if (message.value !== "") {
+      if (message.value !== '') {
         obj.value = message.value;
       }
       return obj;
     },
 
     create<I extends Exact<DeepPartial<OpMetadata_DescriptionEntry>, I>>(
-      base?: I
+      base?: I,
     ): OpMetadata_DescriptionEntry {
       return OpMetadata_DescriptionEntry.fromPartial(base ?? ({} as any));
     },
     fromPartial<I extends Exact<DeepPartial<OpMetadata_DescriptionEntry>, I>>(
-      object: I
+      object: I,
     ): OpMetadata_DescriptionEntry {
       const message = createBaseOpMetadata_DescriptionEntry();
-      message.key = object.key ?? "";
-      message.value = object.value ?? "";
+      message.key = object.key ?? '';
+      message.value = object.value ?? '';
       return message;
     },
   };
 
 function createBaseOpMetadata_CapsEntry(): OpMetadata_CapsEntry {
-  return { key: "", value: false };
+  return { key: '', value: false };
 }
 
 export const OpMetadata_CapsEntry: MessageFns<OpMetadata_CapsEntry> = {
   encode(
     message: OpMetadata_CapsEntry,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.key !== "") {
+    if (message.key !== '') {
       writer.uint32(10).string(message.key);
     }
     if (message.value !== false) {
@@ -3593,7 +3630,7 @@ export const OpMetadata_CapsEntry: MessageFns<OpMetadata_CapsEntry> = {
 
   decode(
     input: BinaryReader | Uint8Array,
-    length?: number
+    length?: number,
   ): OpMetadata_CapsEntry {
     const reader =
       input instanceof BinaryReader ? input : new BinaryReader(input);
@@ -3629,14 +3666,14 @@ export const OpMetadata_CapsEntry: MessageFns<OpMetadata_CapsEntry> = {
 
   fromJSON(object: any): OpMetadata_CapsEntry {
     return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      key: isSet(object.key) ? globalThis.String(object.key) : '',
       value: isSet(object.value) ? globalThis.Boolean(object.value) : false,
     };
   },
 
   toJSON(message: OpMetadata_CapsEntry): unknown {
     const obj: any = {};
-    if (message.key !== "") {
+    if (message.key !== '') {
       obj.key = message.key;
     }
     if (message.value !== false) {
@@ -3646,15 +3683,15 @@ export const OpMetadata_CapsEntry: MessageFns<OpMetadata_CapsEntry> = {
   },
 
   create<I extends Exact<DeepPartial<OpMetadata_CapsEntry>, I>>(
-    base?: I
+    base?: I,
   ): OpMetadata_CapsEntry {
     return OpMetadata_CapsEntry.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<OpMetadata_CapsEntry>, I>>(
-    object: I
+    object: I,
   ): OpMetadata_CapsEntry {
     const message = createBaseOpMetadata_CapsEntry();
-    message.key = object.key ?? "";
+    message.key = object.key ?? '';
     message.value = object.value ?? false;
     return message;
   },
@@ -3667,12 +3704,12 @@ function createBaseSource(): Source {
 export const Source: MessageFns<Source> = {
   encode(
     message: Source,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     Object.entries(message.locations).forEach(([key, value]) => {
       Source_LocationsEntry.encode(
         { key: key as any, value },
-        writer.uint32(10).fork()
+        writer.uint32(10).fork(),
       ).join();
     });
     for (const v of message.infos) {
@@ -3725,7 +3762,7 @@ export const Source: MessageFns<Source> = {
               acc[key] = Locations.fromJSON(value);
               return acc;
             },
-            {}
+            {},
           )
         : {},
       infos: globalThis.Array.isArray(object?.infos)
@@ -3746,7 +3783,7 @@ export const Source: MessageFns<Source> = {
       }
     }
     if (message.infos?.length) {
-      obj.infos = message.infos.map((e) => SourceInfo.toJSON(e));
+      obj.infos = message.infos.map(e => SourceInfo.toJSON(e));
     }
     return obj;
   },
@@ -3764,21 +3801,21 @@ export const Source: MessageFns<Source> = {
       }
       return acc;
     }, {});
-    message.infos = object.infos?.map((e) => SourceInfo.fromPartial(e)) || [];
+    message.infos = object.infos?.map(e => SourceInfo.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseSource_LocationsEntry(): Source_LocationsEntry {
-  return { key: "", value: undefined };
+  return { key: '', value: undefined };
 }
 
 export const Source_LocationsEntry: MessageFns<Source_LocationsEntry> = {
   encode(
     message: Source_LocationsEntry,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.key !== "") {
+    if (message.key !== '') {
       writer.uint32(10).string(message.key);
     }
     if (message.value !== undefined) {
@@ -3789,7 +3826,7 @@ export const Source_LocationsEntry: MessageFns<Source_LocationsEntry> = {
 
   decode(
     input: BinaryReader | Uint8Array,
-    length?: number
+    length?: number,
   ): Source_LocationsEntry {
     const reader =
       input instanceof BinaryReader ? input : new BinaryReader(input);
@@ -3825,14 +3862,14 @@ export const Source_LocationsEntry: MessageFns<Source_LocationsEntry> = {
 
   fromJSON(object: any): Source_LocationsEntry {
     return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      key: isSet(object.key) ? globalThis.String(object.key) : '',
       value: isSet(object.value) ? Locations.fromJSON(object.value) : undefined,
     };
   },
 
   toJSON(message: Source_LocationsEntry): unknown {
     const obj: any = {};
-    if (message.key !== "") {
+    if (message.key !== '') {
       obj.key = message.key;
     }
     if (message.value !== undefined) {
@@ -3842,15 +3879,15 @@ export const Source_LocationsEntry: MessageFns<Source_LocationsEntry> = {
   },
 
   create<I extends Exact<DeepPartial<Source_LocationsEntry>, I>>(
-    base?: I
+    base?: I,
   ): Source_LocationsEntry {
     return Source_LocationsEntry.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<Source_LocationsEntry>, I>>(
-    object: I
+    object: I,
   ): Source_LocationsEntry {
     const message = createBaseSource_LocationsEntry();
-    message.key = object.key ?? "";
+    message.key = object.key ?? '';
     message.value =
       object.value !== undefined && object.value !== null
         ? Locations.fromPartial(object.value)
@@ -3866,7 +3903,7 @@ function createBaseLocations(): Locations {
 export const Locations: MessageFns<Locations> = {
   encode(
     message: Locations,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     for (const v of message.locations) {
       Location.encode(v!, writer.uint32(10).fork()).join();
@@ -3910,7 +3947,7 @@ export const Locations: MessageFns<Locations> = {
   toJSON(message: Locations): unknown {
     const obj: any = {};
     if (message.locations?.length) {
-      obj.locations = message.locations.map((e) => Location.toJSON(e));
+      obj.locations = message.locations.map(e => Location.toJSON(e));
     }
     return obj;
   },
@@ -3919,30 +3956,30 @@ export const Locations: MessageFns<Locations> = {
     return Locations.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<Locations>, I>>(
-    object: I
+    object: I,
   ): Locations {
     const message = createBaseLocations();
     message.locations =
-      object.locations?.map((e) => Location.fromPartial(e)) || [];
+      object.locations?.map(e => Location.fromPartial(e)) || [];
     return message;
   },
 };
 
 function createBaseSourceInfo(): SourceInfo {
   return {
-    filename: "",
+    filename: '',
     data: new Uint8Array(0),
     definition: undefined,
-    language: "",
+    language: '',
   };
 }
 
 export const SourceInfo: MessageFns<SourceInfo> = {
   encode(
     message: SourceInfo,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.filename !== "") {
+    if (message.filename !== '') {
       writer.uint32(10).string(message.filename);
     }
     if (message.data.length !== 0) {
@@ -3951,7 +3988,7 @@ export const SourceInfo: MessageFns<SourceInfo> = {
     if (message.definition !== undefined) {
       Definition.encode(message.definition, writer.uint32(26).fork()).join();
     }
-    if (message.language !== "") {
+    if (message.language !== '') {
       writer.uint32(34).string(message.language);
     }
     return writer;
@@ -4010,7 +4047,7 @@ export const SourceInfo: MessageFns<SourceInfo> = {
     return {
       filename: isSet(object.filename)
         ? globalThis.String(object.filename)
-        : "",
+        : '',
       data: isSet(object.data)
         ? bytesFromBase64(object.data)
         : new Uint8Array(0),
@@ -4019,13 +4056,13 @@ export const SourceInfo: MessageFns<SourceInfo> = {
         : undefined,
       language: isSet(object.language)
         ? globalThis.String(object.language)
-        : "",
+        : '',
     };
   },
 
   toJSON(message: SourceInfo): unknown {
     const obj: any = {};
-    if (message.filename !== "") {
+    if (message.filename !== '') {
       obj.filename = message.filename;
     }
     if (message.data.length !== 0) {
@@ -4034,7 +4071,7 @@ export const SourceInfo: MessageFns<SourceInfo> = {
     if (message.definition !== undefined) {
       obj.definition = Definition.toJSON(message.definition);
     }
-    if (message.language !== "") {
+    if (message.language !== '') {
       obj.language = message.language;
     }
     return obj;
@@ -4044,16 +4081,16 @@ export const SourceInfo: MessageFns<SourceInfo> = {
     return SourceInfo.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<SourceInfo>, I>>(
-    object: I
+    object: I,
   ): SourceInfo {
     const message = createBaseSourceInfo();
-    message.filename = object.filename ?? "";
+    message.filename = object.filename ?? '';
     message.data = object.data ?? new Uint8Array(0);
     message.definition =
       object.definition !== undefined && object.definition !== null
         ? Definition.fromPartial(object.definition)
         : undefined;
-    message.language = object.language ?? "";
+    message.language = object.language ?? '';
     return message;
   },
 };
@@ -4065,7 +4102,7 @@ function createBaseLocation(): Location {
 export const Location: MessageFns<Location> = {
   encode(
     message: Location,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.sourceIndex !== 0) {
       writer.uint32(8).int32(message.sourceIndex);
@@ -4126,7 +4163,7 @@ export const Location: MessageFns<Location> = {
       obj.sourceIndex = Math.round(message.sourceIndex);
     }
     if (message.ranges?.length) {
-      obj.ranges = message.ranges.map((e) => Range.toJSON(e));
+      obj.ranges = message.ranges.map(e => Range.toJSON(e));
     }
     return obj;
   },
@@ -4137,7 +4174,7 @@ export const Location: MessageFns<Location> = {
   fromPartial<I extends Exact<DeepPartial<Location>, I>>(object: I): Location {
     const message = createBaseLocation();
     message.sourceIndex = object.sourceIndex ?? 0;
-    message.ranges = object.ranges?.map((e) => Range.fromPartial(e)) || [];
+    message.ranges = object.ranges?.map(e => Range.fromPartial(e)) || [];
     return message;
   },
 };
@@ -4149,7 +4186,7 @@ function createBaseRange(): Range {
 export const Range: MessageFns<Range> = {
   encode(
     message: Range,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.start !== undefined) {
       Position.encode(message.start, writer.uint32(10).fork()).join();
@@ -4235,7 +4272,7 @@ function createBasePosition(): Position {
 export const Position: MessageFns<Position> = {
   encode(
     message: Position,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.line !== 0) {
       writer.uint32(8).int32(message.line);
@@ -4317,7 +4354,7 @@ function createBaseExportCache(): ExportCache {
 export const ExportCache: MessageFns<ExportCache> = {
   encode(
     message: ExportCache,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.Value !== false) {
       writer.uint32(8).bool(message.Value);
@@ -4368,7 +4405,7 @@ export const ExportCache: MessageFns<ExportCache> = {
     return ExportCache.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<ExportCache>, I>>(
-    object: I
+    object: I,
   ): ExportCache {
     const message = createBaseExportCache();
     message.Value = object.Value ?? false;
@@ -4377,18 +4414,18 @@ export const ExportCache: MessageFns<ExportCache> = {
 };
 
 function createBaseProgressGroup(): ProgressGroup {
-  return { id: "", name: "", weak: false };
+  return { id: '', name: '', weak: false };
 }
 
 export const ProgressGroup: MessageFns<ProgressGroup> = {
   encode(
     message: ProgressGroup,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.id !== "") {
+    if (message.id !== '') {
       writer.uint32(10).string(message.id);
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(18).string(message.name);
     }
     if (message.weak !== false) {
@@ -4440,18 +4477,18 @@ export const ProgressGroup: MessageFns<ProgressGroup> = {
 
   fromJSON(object: any): ProgressGroup {
     return {
-      id: isSet(object.id) ? globalThis.String(object.id) : "",
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
+      id: isSet(object.id) ? globalThis.String(object.id) : '',
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
       weak: isSet(object.weak) ? globalThis.Boolean(object.weak) : false,
     };
   },
 
   toJSON(message: ProgressGroup): unknown {
     const obj: any = {};
-    if (message.id !== "") {
+    if (message.id !== '') {
       obj.id = message.id;
     }
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
     if (message.weak !== false) {
@@ -4461,16 +4498,16 @@ export const ProgressGroup: MessageFns<ProgressGroup> = {
   },
 
   create<I extends Exact<DeepPartial<ProgressGroup>, I>>(
-    base?: I
+    base?: I,
   ): ProgressGroup {
     return ProgressGroup.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<ProgressGroup>, I>>(
-    object: I
+    object: I,
   ): ProgressGroup {
     const message = createBaseProgressGroup();
-    message.id = object.id ?? "";
-    message.name = object.name ?? "";
+    message.id = object.id ?? '';
+    message.name = object.name ?? '';
     message.weak = object.weak ?? false;
     return message;
   },
@@ -4478,32 +4515,32 @@ export const ProgressGroup: MessageFns<ProgressGroup> = {
 
 function createBaseProxyEnv(): ProxyEnv {
   return {
-    httpProxy: "",
-    httpsProxy: "",
-    ftpProxy: "",
-    noProxy: "",
-    allProxy: "",
+    httpProxy: '',
+    httpsProxy: '',
+    ftpProxy: '',
+    noProxy: '',
+    allProxy: '',
   };
 }
 
 export const ProxyEnv: MessageFns<ProxyEnv> = {
   encode(
     message: ProxyEnv,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.httpProxy !== "") {
+    if (message.httpProxy !== '') {
       writer.uint32(10).string(message.httpProxy);
     }
-    if (message.httpsProxy !== "") {
+    if (message.httpsProxy !== '') {
       writer.uint32(18).string(message.httpsProxy);
     }
-    if (message.ftpProxy !== "") {
+    if (message.ftpProxy !== '') {
       writer.uint32(26).string(message.ftpProxy);
     }
-    if (message.noProxy !== "") {
+    if (message.noProxy !== '') {
       writer.uint32(34).string(message.noProxy);
     }
-    if (message.allProxy !== "") {
+    if (message.allProxy !== '') {
       writer.uint32(42).string(message.allProxy);
     }
     return writer;
@@ -4570,35 +4607,35 @@ export const ProxyEnv: MessageFns<ProxyEnv> = {
     return {
       httpProxy: isSet(object.httpProxy)
         ? globalThis.String(object.httpProxy)
-        : "",
+        : '',
       httpsProxy: isSet(object.httpsProxy)
         ? globalThis.String(object.httpsProxy)
-        : "",
+        : '',
       ftpProxy: isSet(object.ftpProxy)
         ? globalThis.String(object.ftpProxy)
-        : "",
-      noProxy: isSet(object.noProxy) ? globalThis.String(object.noProxy) : "",
+        : '',
+      noProxy: isSet(object.noProxy) ? globalThis.String(object.noProxy) : '',
       allProxy: isSet(object.allProxy)
         ? globalThis.String(object.allProxy)
-        : "",
+        : '',
     };
   },
 
   toJSON(message: ProxyEnv): unknown {
     const obj: any = {};
-    if (message.httpProxy !== "") {
+    if (message.httpProxy !== '') {
       obj.httpProxy = message.httpProxy;
     }
-    if (message.httpsProxy !== "") {
+    if (message.httpsProxy !== '') {
       obj.httpsProxy = message.httpsProxy;
     }
-    if (message.ftpProxy !== "") {
+    if (message.ftpProxy !== '') {
       obj.ftpProxy = message.ftpProxy;
     }
-    if (message.noProxy !== "") {
+    if (message.noProxy !== '') {
       obj.noProxy = message.noProxy;
     }
-    if (message.allProxy !== "") {
+    if (message.allProxy !== '') {
       obj.allProxy = message.allProxy;
     }
     return obj;
@@ -4609,11 +4646,11 @@ export const ProxyEnv: MessageFns<ProxyEnv> = {
   },
   fromPartial<I extends Exact<DeepPartial<ProxyEnv>, I>>(object: I): ProxyEnv {
     const message = createBaseProxyEnv();
-    message.httpProxy = object.httpProxy ?? "";
-    message.httpsProxy = object.httpsProxy ?? "";
-    message.ftpProxy = object.ftpProxy ?? "";
-    message.noProxy = object.noProxy ?? "";
-    message.allProxy = object.allProxy ?? "";
+    message.httpProxy = object.httpProxy ?? '';
+    message.httpsProxy = object.httpsProxy ?? '';
+    message.ftpProxy = object.ftpProxy ?? '';
+    message.noProxy = object.noProxy ?? '';
+    message.allProxy = object.allProxy ?? '';
     return message;
   },
 };
@@ -4625,7 +4662,7 @@ function createBaseWorkerConstraints(): WorkerConstraints {
 export const WorkerConstraints: MessageFns<WorkerConstraints> = {
   encode(
     message: WorkerConstraints,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     for (const v of message.filter) {
       writer.uint32(10).string(v!);
@@ -4675,15 +4712,15 @@ export const WorkerConstraints: MessageFns<WorkerConstraints> = {
   },
 
   create<I extends Exact<DeepPartial<WorkerConstraints>, I>>(
-    base?: I
+    base?: I,
   ): WorkerConstraints {
     return WorkerConstraints.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<WorkerConstraints>, I>>(
-    object: I
+    object: I,
   ): WorkerConstraints {
     const message = createBaseWorkerConstraints();
-    message.filter = object.filter?.map((e) => e) || [];
+    message.filter = object.filter?.map(e => e) || [];
     return message;
   },
 };
@@ -4695,7 +4732,7 @@ function createBaseDefinition(): Definition {
 export const Definition: MessageFns<Definition> = {
   encode(
     message: Definition,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     for (const v of message.def) {
       writer.uint32(10).bytes(v!);
@@ -4703,7 +4740,7 @@ export const Definition: MessageFns<Definition> = {
     Object.entries(message.metadata).forEach(([key, value]) => {
       Definition_MetadataEntry.encode(
         { key: key as any, value },
-        writer.uint32(18).fork()
+        writer.uint32(18).fork(),
       ).join();
     });
     if (message.Source !== undefined) {
@@ -4735,7 +4772,7 @@ export const Definition: MessageFns<Definition> = {
 
           const entry2 = Definition_MetadataEntry.decode(
             reader,
-            reader.uint32()
+            reader.uint32(),
           );
           if (entry2.value !== undefined) {
             message.metadata[entry2.key] = entry2.value;
@@ -4770,7 +4807,7 @@ export const Definition: MessageFns<Definition> = {
               acc[key] = OpMetadata.fromJSON(value);
               return acc;
             },
-            {}
+            {},
           )
         : {},
       Source: isSet(object.Source) ? Source.fromJSON(object.Source) : undefined,
@@ -4780,7 +4817,7 @@ export const Definition: MessageFns<Definition> = {
   toJSON(message: Definition): unknown {
     const obj: any = {};
     if (message.def?.length) {
-      obj.def = message.def.map((e) => base64FromBytes(e));
+      obj.def = message.def.map(e => base64FromBytes(e));
     }
     if (message.metadata) {
       const entries = Object.entries(message.metadata);
@@ -4801,10 +4838,10 @@ export const Definition: MessageFns<Definition> = {
     return Definition.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<Definition>, I>>(
-    object: I
+    object: I,
   ): Definition {
     const message = createBaseDefinition();
-    message.def = object.def?.map((e) => e) || [];
+    message.def = object.def?.map(e => e) || [];
     message.metadata = Object.entries(object.metadata ?? {}).reduce<{
       [key: string]: OpMetadata;
     }>((acc, [key, value]) => {
@@ -4822,15 +4859,15 @@ export const Definition: MessageFns<Definition> = {
 };
 
 function createBaseDefinition_MetadataEntry(): Definition_MetadataEntry {
-  return { key: "", value: undefined };
+  return { key: '', value: undefined };
 }
 
 export const Definition_MetadataEntry: MessageFns<Definition_MetadataEntry> = {
   encode(
     message: Definition_MetadataEntry,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.key !== "") {
+    if (message.key !== '') {
       writer.uint32(10).string(message.key);
     }
     if (message.value !== undefined) {
@@ -4841,7 +4878,7 @@ export const Definition_MetadataEntry: MessageFns<Definition_MetadataEntry> = {
 
   decode(
     input: BinaryReader | Uint8Array,
-    length?: number
+    length?: number,
   ): Definition_MetadataEntry {
     const reader =
       input instanceof BinaryReader ? input : new BinaryReader(input);
@@ -4877,7 +4914,7 @@ export const Definition_MetadataEntry: MessageFns<Definition_MetadataEntry> = {
 
   fromJSON(object: any): Definition_MetadataEntry {
     return {
-      key: isSet(object.key) ? globalThis.String(object.key) : "",
+      key: isSet(object.key) ? globalThis.String(object.key) : '',
       value: isSet(object.value)
         ? OpMetadata.fromJSON(object.value)
         : undefined,
@@ -4886,7 +4923,7 @@ export const Definition_MetadataEntry: MessageFns<Definition_MetadataEntry> = {
 
   toJSON(message: Definition_MetadataEntry): unknown {
     const obj: any = {};
-    if (message.key !== "") {
+    if (message.key !== '') {
       obj.key = message.key;
     }
     if (message.value !== undefined) {
@@ -4896,15 +4933,15 @@ export const Definition_MetadataEntry: MessageFns<Definition_MetadataEntry> = {
   },
 
   create<I extends Exact<DeepPartial<Definition_MetadataEntry>, I>>(
-    base?: I
+    base?: I,
   ): Definition_MetadataEntry {
     return Definition_MetadataEntry.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<Definition_MetadataEntry>, I>>(
-    object: I
+    object: I,
   ): Definition_MetadataEntry {
     const message = createBaseDefinition_MetadataEntry();
-    message.key = object.key ?? "";
+    message.key = object.key ?? '';
     message.value =
       object.value !== undefined && object.value !== null
         ? OpMetadata.fromPartial(object.value)
@@ -4920,7 +4957,7 @@ function createBaseFileOp(): FileOp {
 export const FileOp: MessageFns<FileOp> = {
   encode(
     message: FileOp,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     for (const v of message.actions) {
       FileAction.encode(v!, writer.uint32(18).fork()).join();
@@ -4964,7 +5001,7 @@ export const FileOp: MessageFns<FileOp> = {
   toJSON(message: FileOp): unknown {
     const obj: any = {};
     if (message.actions?.length) {
-      obj.actions = message.actions.map((e) => FileAction.toJSON(e));
+      obj.actions = message.actions.map(e => FileAction.toJSON(e));
     }
     return obj;
   },
@@ -4974,8 +5011,7 @@ export const FileOp: MessageFns<FileOp> = {
   },
   fromPartial<I extends Exact<DeepPartial<FileOp>, I>>(object: I): FileOp {
     const message = createBaseFileOp();
-    message.actions =
-      object.actions?.map((e) => FileAction.fromPartial(e)) || [];
+    message.actions = object.actions?.map(e => FileAction.fromPartial(e)) || [];
     return message;
   },
 };
@@ -4987,7 +5023,7 @@ function createBaseFileAction(): FileAction {
 export const FileAction: MessageFns<FileAction> = {
   encode(
     message: FileAction,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.input !== 0) {
       writer.uint32(8).int64(message.input);
@@ -4999,31 +5035,31 @@ export const FileAction: MessageFns<FileAction> = {
       writer.uint32(24).int64(message.output);
     }
     switch (message.action?.$case) {
-      case "copy":
+      case 'copy':
         FileActionCopy.encode(
           message.action.copy,
-          writer.uint32(34).fork()
+          writer.uint32(34).fork(),
         ).join();
         break;
-      case "mkfile":
+      case 'mkfile':
         FileActionMkFile.encode(
           message.action.mkfile,
-          writer.uint32(42).fork()
+          writer.uint32(42).fork(),
         ).join();
         break;
-      case "mkdir":
+      case 'mkdir':
         FileActionMkDir.encode(
           message.action.mkdir,
-          writer.uint32(50).fork()
+          writer.uint32(50).fork(),
         ).join();
         break;
-      case "rm":
+      case 'rm':
         FileActionRm.encode(message.action.rm, writer.uint32(58).fork()).join();
         break;
-      case "symlink":
+      case 'symlink':
         FileActionSymlink.encode(
           message.action.symlink,
-          writer.uint32(66).fork()
+          writer.uint32(66).fork(),
         ).join();
         break;
     }
@@ -5068,7 +5104,7 @@ export const FileAction: MessageFns<FileAction> = {
           }
 
           message.action = {
-            $case: "copy",
+            $case: 'copy',
             copy: FileActionCopy.decode(reader, reader.uint32()),
           };
           continue;
@@ -5079,7 +5115,7 @@ export const FileAction: MessageFns<FileAction> = {
           }
 
           message.action = {
-            $case: "mkfile",
+            $case: 'mkfile',
             mkfile: FileActionMkFile.decode(reader, reader.uint32()),
           };
           continue;
@@ -5090,7 +5126,7 @@ export const FileAction: MessageFns<FileAction> = {
           }
 
           message.action = {
-            $case: "mkdir",
+            $case: 'mkdir',
             mkdir: FileActionMkDir.decode(reader, reader.uint32()),
           };
           continue;
@@ -5101,7 +5137,7 @@ export const FileAction: MessageFns<FileAction> = {
           }
 
           message.action = {
-            $case: "rm",
+            $case: 'rm',
             rm: FileActionRm.decode(reader, reader.uint32()),
           };
           continue;
@@ -5112,7 +5148,7 @@ export const FileAction: MessageFns<FileAction> = {
           }
 
           message.action = {
-            $case: "symlink",
+            $case: 'symlink',
             symlink: FileActionSymlink.decode(reader, reader.uint32()),
           };
           continue;
@@ -5134,19 +5170,19 @@ export const FileAction: MessageFns<FileAction> = {
         : 0,
       output: isSet(object.output) ? globalThis.Number(object.output) : 0,
       action: isSet(object.copy)
-        ? { $case: "copy", copy: FileActionCopy.fromJSON(object.copy) }
+        ? { $case: 'copy', copy: FileActionCopy.fromJSON(object.copy) }
         : isSet(object.mkfile)
           ? {
-              $case: "mkfile",
+              $case: 'mkfile',
               mkfile: FileActionMkFile.fromJSON(object.mkfile),
             }
           : isSet(object.mkdir)
-            ? { $case: "mkdir", mkdir: FileActionMkDir.fromJSON(object.mkdir) }
+            ? { $case: 'mkdir', mkdir: FileActionMkDir.fromJSON(object.mkdir) }
             : isSet(object.rm)
-              ? { $case: "rm", rm: FileActionRm.fromJSON(object.rm) }
+              ? { $case: 'rm', rm: FileActionRm.fromJSON(object.rm) }
               : isSet(object.symlink)
                 ? {
-                    $case: "symlink",
+                    $case: 'symlink',
                     symlink: FileActionSymlink.fromJSON(object.symlink),
                   }
                 : undefined,
@@ -5164,15 +5200,15 @@ export const FileAction: MessageFns<FileAction> = {
     if (message.output !== 0) {
       obj.output = Math.round(message.output);
     }
-    if (message.action?.$case === "copy") {
+    if (message.action?.$case === 'copy') {
       obj.copy = FileActionCopy.toJSON(message.action.copy);
-    } else if (message.action?.$case === "mkfile") {
+    } else if (message.action?.$case === 'mkfile') {
       obj.mkfile = FileActionMkFile.toJSON(message.action.mkfile);
-    } else if (message.action?.$case === "mkdir") {
+    } else if (message.action?.$case === 'mkdir') {
       obj.mkdir = FileActionMkDir.toJSON(message.action.mkdir);
-    } else if (message.action?.$case === "rm") {
+    } else if (message.action?.$case === 'rm') {
       obj.rm = FileActionRm.toJSON(message.action.rm);
-    } else if (message.action?.$case === "symlink") {
+    } else if (message.action?.$case === 'symlink') {
       obj.symlink = FileActionSymlink.toJSON(message.action.symlink);
     }
     return obj;
@@ -5182,62 +5218,62 @@ export const FileAction: MessageFns<FileAction> = {
     return FileAction.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<FileAction>, I>>(
-    object: I
+    object: I,
   ): FileAction {
     const message = createBaseFileAction();
     message.input = object.input ?? 0;
     message.secondaryInput = object.secondaryInput ?? 0;
     message.output = object.output ?? 0;
     switch (object.action?.$case) {
-      case "copy": {
+      case 'copy': {
         if (object.action?.copy !== undefined && object.action?.copy !== null) {
           message.action = {
-            $case: "copy",
+            $case: 'copy',
             copy: FileActionCopy.fromPartial(object.action.copy),
           };
         }
         break;
       }
-      case "mkfile": {
+      case 'mkfile': {
         if (
           object.action?.mkfile !== undefined &&
           object.action?.mkfile !== null
         ) {
           message.action = {
-            $case: "mkfile",
+            $case: 'mkfile',
             mkfile: FileActionMkFile.fromPartial(object.action.mkfile),
           };
         }
         break;
       }
-      case "mkdir": {
+      case 'mkdir': {
         if (
           object.action?.mkdir !== undefined &&
           object.action?.mkdir !== null
         ) {
           message.action = {
-            $case: "mkdir",
+            $case: 'mkdir',
             mkdir: FileActionMkDir.fromPartial(object.action.mkdir),
           };
         }
         break;
       }
-      case "rm": {
+      case 'rm': {
         if (object.action?.rm !== undefined && object.action?.rm !== null) {
           message.action = {
-            $case: "rm",
+            $case: 'rm',
             rm: FileActionRm.fromPartial(object.action.rm),
           };
         }
         break;
       }
-      case "symlink": {
+      case 'symlink': {
         if (
           object.action?.symlink !== undefined &&
           object.action?.symlink !== null
         ) {
           message.action = {
-            $case: "symlink",
+            $case: 'symlink',
             symlink: FileActionSymlink.fromPartial(object.action.symlink),
           };
         }
@@ -5250,8 +5286,8 @@ export const FileAction: MessageFns<FileAction> = {
 
 function createBaseFileActionCopy(): FileActionCopy {
   return {
-    src: "",
-    dest: "",
+    src: '',
+    dest: '',
     owner: undefined,
     mode: 0,
     followSymlink: false,
@@ -5264,19 +5300,19 @@ function createBaseFileActionCopy(): FileActionCopy {
     includePatterns: [],
     excludePatterns: [],
     alwaysReplaceExistingDestPaths: false,
-    modeStr: "",
+    modeStr: '',
   };
 }
 
 export const FileActionCopy: MessageFns<FileActionCopy> = {
   encode(
     message: FileActionCopy,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.src !== "") {
+    if (message.src !== '') {
       writer.uint32(10).string(message.src);
     }
-    if (message.dest !== "") {
+    if (message.dest !== '') {
       writer.uint32(18).string(message.dest);
     }
     if (message.owner !== undefined) {
@@ -5315,7 +5351,7 @@ export const FileActionCopy: MessageFns<FileActionCopy> = {
     if (message.alwaysReplaceExistingDestPaths !== false) {
       writer.uint32(112).bool(message.alwaysReplaceExistingDestPaths);
     }
-    if (message.modeStr !== "") {
+    if (message.modeStr !== '') {
       writer.uint32(122).string(message.modeStr);
     }
     return writer;
@@ -5460,8 +5496,8 @@ export const FileActionCopy: MessageFns<FileActionCopy> = {
 
   fromJSON(object: any): FileActionCopy {
     return {
-      src: isSet(object.src) ? globalThis.String(object.src) : "",
-      dest: isSet(object.dest) ? globalThis.String(object.dest) : "",
+      src: isSet(object.src) ? globalThis.String(object.src) : '',
+      dest: isSet(object.dest) ? globalThis.String(object.dest) : '',
       owner: isSet(object.owner) ? ChownOpt.fromJSON(object.owner) : undefined,
       mode: isSet(object.mode) ? globalThis.Number(object.mode) : 0,
       followSymlink: isSet(object.followSymlink)
@@ -5471,7 +5507,7 @@ export const FileActionCopy: MessageFns<FileActionCopy> = {
         ? globalThis.Boolean(object.dirCopyContents)
         : false,
       attemptUnpackDockerCompatibility: isSet(
-        object.attemptUnpackDockerCompatibility
+        object.attemptUnpackDockerCompatibility,
       )
         ? globalThis.Boolean(object.attemptUnpackDockerCompatibility)
         : false,
@@ -5494,20 +5530,20 @@ export const FileActionCopy: MessageFns<FileActionCopy> = {
         ? object.excludePatterns.map((e: any) => globalThis.String(e))
         : [],
       alwaysReplaceExistingDestPaths: isSet(
-        object.alwaysReplaceExistingDestPaths
+        object.alwaysReplaceExistingDestPaths,
       )
         ? globalThis.Boolean(object.alwaysReplaceExistingDestPaths)
         : false,
-      modeStr: isSet(object.modeStr) ? globalThis.String(object.modeStr) : "",
+      modeStr: isSet(object.modeStr) ? globalThis.String(object.modeStr) : '',
     };
   },
 
   toJSON(message: FileActionCopy): unknown {
     const obj: any = {};
-    if (message.src !== "") {
+    if (message.src !== '') {
       obj.src = message.src;
     }
-    if (message.dest !== "") {
+    if (message.dest !== '') {
       obj.dest = message.dest;
     }
     if (message.owner !== undefined) {
@@ -5548,23 +5584,23 @@ export const FileActionCopy: MessageFns<FileActionCopy> = {
       obj.alwaysReplaceExistingDestPaths =
         message.alwaysReplaceExistingDestPaths;
     }
-    if (message.modeStr !== "") {
+    if (message.modeStr !== '') {
       obj.modeStr = message.modeStr;
     }
     return obj;
   },
 
   create<I extends Exact<DeepPartial<FileActionCopy>, I>>(
-    base?: I
+    base?: I,
   ): FileActionCopy {
     return FileActionCopy.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<FileActionCopy>, I>>(
-    object: I
+    object: I,
   ): FileActionCopy {
     const message = createBaseFileActionCopy();
-    message.src = object.src ?? "";
-    message.dest = object.dest ?? "";
+    message.src = object.src ?? '';
+    message.dest = object.dest ?? '';
     message.owner =
       object.owner !== undefined && object.owner !== null
         ? ChownOpt.fromPartial(object.owner)
@@ -5578,18 +5614,18 @@ export const FileActionCopy: MessageFns<FileActionCopy> = {
     message.allowWildcard = object.allowWildcard ?? false;
     message.allowEmptyWildcard = object.allowEmptyWildcard ?? false;
     message.timestamp = object.timestamp ?? 0;
-    message.includePatterns = object.includePatterns?.map((e) => e) || [];
-    message.excludePatterns = object.excludePatterns?.map((e) => e) || [];
+    message.includePatterns = object.includePatterns?.map(e => e) || [];
+    message.excludePatterns = object.excludePatterns?.map(e => e) || [];
     message.alwaysReplaceExistingDestPaths =
       object.alwaysReplaceExistingDestPaths ?? false;
-    message.modeStr = object.modeStr ?? "";
+    message.modeStr = object.modeStr ?? '';
     return message;
   },
 };
 
 function createBaseFileActionMkFile(): FileActionMkFile {
   return {
-    path: "",
+    path: '',
     mode: 0,
     data: new Uint8Array(0),
     owner: undefined,
@@ -5600,9 +5636,9 @@ function createBaseFileActionMkFile(): FileActionMkFile {
 export const FileActionMkFile: MessageFns<FileActionMkFile> = {
   encode(
     message: FileActionMkFile,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.path !== "") {
+    if (message.path !== '') {
       writer.uint32(10).string(message.path);
     }
     if (message.mode !== 0) {
@@ -5679,7 +5715,7 @@ export const FileActionMkFile: MessageFns<FileActionMkFile> = {
 
   fromJSON(object: any): FileActionMkFile {
     return {
-      path: isSet(object.path) ? globalThis.String(object.path) : "",
+      path: isSet(object.path) ? globalThis.String(object.path) : '',
       mode: isSet(object.mode) ? globalThis.Number(object.mode) : 0,
       data: isSet(object.data)
         ? bytesFromBase64(object.data)
@@ -5693,7 +5729,7 @@ export const FileActionMkFile: MessageFns<FileActionMkFile> = {
 
   toJSON(message: FileActionMkFile): unknown {
     const obj: any = {};
-    if (message.path !== "") {
+    if (message.path !== '') {
       obj.path = message.path;
     }
     if (message.mode !== 0) {
@@ -5712,15 +5748,15 @@ export const FileActionMkFile: MessageFns<FileActionMkFile> = {
   },
 
   create<I extends Exact<DeepPartial<FileActionMkFile>, I>>(
-    base?: I
+    base?: I,
   ): FileActionMkFile {
     return FileActionMkFile.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<FileActionMkFile>, I>>(
-    object: I
+    object: I,
   ): FileActionMkFile {
     const message = createBaseFileActionMkFile();
-    message.path = object.path ?? "";
+    message.path = object.path ?? '';
     message.mode = object.mode ?? 0;
     message.data = object.data ?? new Uint8Array(0);
     message.owner =
@@ -5733,18 +5769,18 @@ export const FileActionMkFile: MessageFns<FileActionMkFile> = {
 };
 
 function createBaseFileActionSymlink(): FileActionSymlink {
-  return { oldpath: "", newpath: "", owner: undefined, timestamp: 0 };
+  return { oldpath: '', newpath: '', owner: undefined, timestamp: 0 };
 }
 
 export const FileActionSymlink: MessageFns<FileActionSymlink> = {
   encode(
     message: FileActionSymlink,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.oldpath !== "") {
+    if (message.oldpath !== '') {
       writer.uint32(10).string(message.oldpath);
     }
-    if (message.newpath !== "") {
+    if (message.newpath !== '') {
       writer.uint32(18).string(message.newpath);
     }
     if (message.owner !== undefined) {
@@ -5807,8 +5843,8 @@ export const FileActionSymlink: MessageFns<FileActionSymlink> = {
 
   fromJSON(object: any): FileActionSymlink {
     return {
-      oldpath: isSet(object.oldpath) ? globalThis.String(object.oldpath) : "",
-      newpath: isSet(object.newpath) ? globalThis.String(object.newpath) : "",
+      oldpath: isSet(object.oldpath) ? globalThis.String(object.oldpath) : '',
+      newpath: isSet(object.newpath) ? globalThis.String(object.newpath) : '',
       owner: isSet(object.owner) ? ChownOpt.fromJSON(object.owner) : undefined,
       timestamp: isSet(object.timestamp)
         ? globalThis.Number(object.timestamp)
@@ -5818,10 +5854,10 @@ export const FileActionSymlink: MessageFns<FileActionSymlink> = {
 
   toJSON(message: FileActionSymlink): unknown {
     const obj: any = {};
-    if (message.oldpath !== "") {
+    if (message.oldpath !== '') {
       obj.oldpath = message.oldpath;
     }
-    if (message.newpath !== "") {
+    if (message.newpath !== '') {
       obj.newpath = message.newpath;
     }
     if (message.owner !== undefined) {
@@ -5834,16 +5870,16 @@ export const FileActionSymlink: MessageFns<FileActionSymlink> = {
   },
 
   create<I extends Exact<DeepPartial<FileActionSymlink>, I>>(
-    base?: I
+    base?: I,
   ): FileActionSymlink {
     return FileActionSymlink.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<FileActionSymlink>, I>>(
-    object: I
+    object: I,
   ): FileActionSymlink {
     const message = createBaseFileActionSymlink();
-    message.oldpath = object.oldpath ?? "";
-    message.newpath = object.newpath ?? "";
+    message.oldpath = object.oldpath ?? '';
+    message.newpath = object.newpath ?? '';
     message.owner =
       object.owner !== undefined && object.owner !== null
         ? ChownOpt.fromPartial(object.owner)
@@ -5855,7 +5891,7 @@ export const FileActionSymlink: MessageFns<FileActionSymlink> = {
 
 function createBaseFileActionMkDir(): FileActionMkDir {
   return {
-    path: "",
+    path: '',
     mode: 0,
     makeParents: false,
     owner: undefined,
@@ -5866,9 +5902,9 @@ function createBaseFileActionMkDir(): FileActionMkDir {
 export const FileActionMkDir: MessageFns<FileActionMkDir> = {
   encode(
     message: FileActionMkDir,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.path !== "") {
+    if (message.path !== '') {
       writer.uint32(10).string(message.path);
     }
     if (message.mode !== 0) {
@@ -5945,7 +5981,7 @@ export const FileActionMkDir: MessageFns<FileActionMkDir> = {
 
   fromJSON(object: any): FileActionMkDir {
     return {
-      path: isSet(object.path) ? globalThis.String(object.path) : "",
+      path: isSet(object.path) ? globalThis.String(object.path) : '',
       mode: isSet(object.mode) ? globalThis.Number(object.mode) : 0,
       makeParents: isSet(object.makeParents)
         ? globalThis.Boolean(object.makeParents)
@@ -5959,7 +5995,7 @@ export const FileActionMkDir: MessageFns<FileActionMkDir> = {
 
   toJSON(message: FileActionMkDir): unknown {
     const obj: any = {};
-    if (message.path !== "") {
+    if (message.path !== '') {
       obj.path = message.path;
     }
     if (message.mode !== 0) {
@@ -5978,15 +6014,15 @@ export const FileActionMkDir: MessageFns<FileActionMkDir> = {
   },
 
   create<I extends Exact<DeepPartial<FileActionMkDir>, I>>(
-    base?: I
+    base?: I,
   ): FileActionMkDir {
     return FileActionMkDir.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<FileActionMkDir>, I>>(
-    object: I
+    object: I,
   ): FileActionMkDir {
     const message = createBaseFileActionMkDir();
-    message.path = object.path ?? "";
+    message.path = object.path ?? '';
     message.mode = object.mode ?? 0;
     message.makeParents = object.makeParents ?? false;
     message.owner =
@@ -5999,15 +6035,15 @@ export const FileActionMkDir: MessageFns<FileActionMkDir> = {
 };
 
 function createBaseFileActionRm(): FileActionRm {
-  return { path: "", allowNotFound: false, allowWildcard: false };
+  return { path: '', allowNotFound: false, allowWildcard: false };
 }
 
 export const FileActionRm: MessageFns<FileActionRm> = {
   encode(
     message: FileActionRm,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.path !== "") {
+    if (message.path !== '') {
       writer.uint32(10).string(message.path);
     }
     if (message.allowNotFound !== false) {
@@ -6062,7 +6098,7 @@ export const FileActionRm: MessageFns<FileActionRm> = {
 
   fromJSON(object: any): FileActionRm {
     return {
-      path: isSet(object.path) ? globalThis.String(object.path) : "",
+      path: isSet(object.path) ? globalThis.String(object.path) : '',
       allowNotFound: isSet(object.allowNotFound)
         ? globalThis.Boolean(object.allowNotFound)
         : false,
@@ -6074,7 +6110,7 @@ export const FileActionRm: MessageFns<FileActionRm> = {
 
   toJSON(message: FileActionRm): unknown {
     const obj: any = {};
-    if (message.path !== "") {
+    if (message.path !== '') {
       obj.path = message.path;
     }
     if (message.allowNotFound !== false) {
@@ -6087,15 +6123,15 @@ export const FileActionRm: MessageFns<FileActionRm> = {
   },
 
   create<I extends Exact<DeepPartial<FileActionRm>, I>>(
-    base?: I
+    base?: I,
   ): FileActionRm {
     return FileActionRm.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<FileActionRm>, I>>(
-    object: I
+    object: I,
   ): FileActionRm {
     const message = createBaseFileActionRm();
-    message.path = object.path ?? "";
+    message.path = object.path ?? '';
     message.allowNotFound = object.allowNotFound ?? false;
     message.allowWildcard = object.allowWildcard ?? false;
     return message;
@@ -6109,7 +6145,7 @@ function createBaseChownOpt(): ChownOpt {
 export const ChownOpt: MessageFns<ChownOpt> = {
   encode(
     message: ChownOpt,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.user !== undefined) {
       UserOpt.encode(message.user, writer.uint32(10).fork()).join();
@@ -6195,16 +6231,16 @@ function createBaseUserOpt(): UserOpt {
 export const UserOpt: MessageFns<UserOpt> = {
   encode(
     message: UserOpt,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     switch (message.user?.$case) {
-      case "byName":
+      case 'byName':
         NamedUserOpt.encode(
           message.user.byName,
-          writer.uint32(10).fork()
+          writer.uint32(10).fork(),
         ).join();
         break;
-      case "byID":
+      case 'byID':
         writer.uint32(16).uint32(message.user.byID);
         break;
     }
@@ -6225,7 +6261,7 @@ export const UserOpt: MessageFns<UserOpt> = {
           }
 
           message.user = {
-            $case: "byName",
+            $case: 'byName',
             byName: NamedUserOpt.decode(reader, reader.uint32()),
           };
           continue;
@@ -6235,7 +6271,7 @@ export const UserOpt: MessageFns<UserOpt> = {
             break;
           }
 
-          message.user = { $case: "byID", byID: reader.uint32() };
+          message.user = { $case: 'byID', byID: reader.uint32() };
           continue;
         }
       }
@@ -6250,18 +6286,18 @@ export const UserOpt: MessageFns<UserOpt> = {
   fromJSON(object: any): UserOpt {
     return {
       user: isSet(object.byName)
-        ? { $case: "byName", byName: NamedUserOpt.fromJSON(object.byName) }
+        ? { $case: 'byName', byName: NamedUserOpt.fromJSON(object.byName) }
         : isSet(object.byID)
-          ? { $case: "byID", byID: globalThis.Number(object.byID) }
+          ? { $case: 'byID', byID: globalThis.Number(object.byID) }
           : undefined,
     };
   },
 
   toJSON(message: UserOpt): unknown {
     const obj: any = {};
-    if (message.user?.$case === "byName") {
+    if (message.user?.$case === 'byName') {
       obj.byName = NamedUserOpt.toJSON(message.user.byName);
-    } else if (message.user?.$case === "byID") {
+    } else if (message.user?.$case === 'byID') {
       obj.byID = Math.round(message.user.byID);
     }
     return obj;
@@ -6273,18 +6309,18 @@ export const UserOpt: MessageFns<UserOpt> = {
   fromPartial<I extends Exact<DeepPartial<UserOpt>, I>>(object: I): UserOpt {
     const message = createBaseUserOpt();
     switch (object.user?.$case) {
-      case "byName": {
+      case 'byName': {
         if (object.user?.byName !== undefined && object.user?.byName !== null) {
           message.user = {
-            $case: "byName",
+            $case: 'byName',
             byName: NamedUserOpt.fromPartial(object.user.byName),
           };
         }
         break;
       }
-      case "byID": {
+      case 'byID': {
         if (object.user?.byID !== undefined && object.user?.byID !== null) {
-          message.user = { $case: "byID", byID: object.user.byID };
+          message.user = { $case: 'byID', byID: object.user.byID };
         }
         break;
       }
@@ -6294,15 +6330,15 @@ export const UserOpt: MessageFns<UserOpt> = {
 };
 
 function createBaseNamedUserOpt(): NamedUserOpt {
-  return { name: "", input: 0 };
+  return { name: '', input: 0 };
 }
 
 export const NamedUserOpt: MessageFns<NamedUserOpt> = {
   encode(
     message: NamedUserOpt,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
-    if (message.name !== "") {
+    if (message.name !== '') {
       writer.uint32(10).string(message.name);
     }
     if (message.input !== 0) {
@@ -6346,14 +6382,14 @@ export const NamedUserOpt: MessageFns<NamedUserOpt> = {
 
   fromJSON(object: any): NamedUserOpt {
     return {
-      name: isSet(object.name) ? globalThis.String(object.name) : "",
+      name: isSet(object.name) ? globalThis.String(object.name) : '',
       input: isSet(object.input) ? globalThis.Number(object.input) : 0,
     };
   },
 
   toJSON(message: NamedUserOpt): unknown {
     const obj: any = {};
-    if (message.name !== "") {
+    if (message.name !== '') {
       obj.name = message.name;
     }
     if (message.input !== 0) {
@@ -6363,15 +6399,15 @@ export const NamedUserOpt: MessageFns<NamedUserOpt> = {
   },
 
   create<I extends Exact<DeepPartial<NamedUserOpt>, I>>(
-    base?: I
+    base?: I,
   ): NamedUserOpt {
     return NamedUserOpt.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<NamedUserOpt>, I>>(
-    object: I
+    object: I,
   ): NamedUserOpt {
     const message = createBaseNamedUserOpt();
-    message.name = object.name ?? "";
+    message.name = object.name ?? '';
     message.input = object.input ?? 0;
     return message;
   },
@@ -6384,7 +6420,7 @@ function createBaseMergeInput(): MergeInput {
 export const MergeInput: MessageFns<MergeInput> = {
   encode(
     message: MergeInput,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.input !== 0) {
       writer.uint32(8).int64(message.input);
@@ -6433,7 +6469,7 @@ export const MergeInput: MessageFns<MergeInput> = {
     return MergeInput.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<MergeInput>, I>>(
-    object: I
+    object: I,
   ): MergeInput {
     const message = createBaseMergeInput();
     message.input = object.input ?? 0;
@@ -6448,7 +6484,7 @@ function createBaseMergeOp(): MergeOp {
 export const MergeOp: MessageFns<MergeOp> = {
   encode(
     message: MergeOp,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     for (const v of message.inputs) {
       MergeInput.encode(v!, writer.uint32(10).fork()).join();
@@ -6492,7 +6528,7 @@ export const MergeOp: MessageFns<MergeOp> = {
   toJSON(message: MergeOp): unknown {
     const obj: any = {};
     if (message.inputs?.length) {
-      obj.inputs = message.inputs.map((e) => MergeInput.toJSON(e));
+      obj.inputs = message.inputs.map(e => MergeInput.toJSON(e));
     }
     return obj;
   },
@@ -6502,7 +6538,7 @@ export const MergeOp: MessageFns<MergeOp> = {
   },
   fromPartial<I extends Exact<DeepPartial<MergeOp>, I>>(object: I): MergeOp {
     const message = createBaseMergeOp();
-    message.inputs = object.inputs?.map((e) => MergeInput.fromPartial(e)) || [];
+    message.inputs = object.inputs?.map(e => MergeInput.fromPartial(e)) || [];
     return message;
   },
 };
@@ -6514,7 +6550,7 @@ function createBaseLowerDiffInput(): LowerDiffInput {
 export const LowerDiffInput: MessageFns<LowerDiffInput> = {
   encode(
     message: LowerDiffInput,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.input !== 0) {
       writer.uint32(8).int64(message.input);
@@ -6560,12 +6596,12 @@ export const LowerDiffInput: MessageFns<LowerDiffInput> = {
   },
 
   create<I extends Exact<DeepPartial<LowerDiffInput>, I>>(
-    base?: I
+    base?: I,
   ): LowerDiffInput {
     return LowerDiffInput.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<LowerDiffInput>, I>>(
-    object: I
+    object: I,
   ): LowerDiffInput {
     const message = createBaseLowerDiffInput();
     message.input = object.input ?? 0;
@@ -6580,7 +6616,7 @@ function createBaseUpperDiffInput(): UpperDiffInput {
 export const UpperDiffInput: MessageFns<UpperDiffInput> = {
   encode(
     message: UpperDiffInput,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.input !== 0) {
       writer.uint32(8).int64(message.input);
@@ -6626,12 +6662,12 @@ export const UpperDiffInput: MessageFns<UpperDiffInput> = {
   },
 
   create<I extends Exact<DeepPartial<UpperDiffInput>, I>>(
-    base?: I
+    base?: I,
   ): UpperDiffInput {
     return UpperDiffInput.fromPartial(base ?? ({} as any));
   },
   fromPartial<I extends Exact<DeepPartial<UpperDiffInput>, I>>(
-    object: I
+    object: I,
   ): UpperDiffInput {
     const message = createBaseUpperDiffInput();
     message.input = object.input ?? 0;
@@ -6646,7 +6682,7 @@ function createBaseDiffOp(): DiffOp {
 export const DiffOp: MessageFns<DiffOp> = {
   encode(
     message: DiffOp,
-    writer: BinaryWriter = new BinaryWriter()
+    writer: BinaryWriter = new BinaryWriter(),
   ): BinaryWriter {
     if (message.lower !== undefined) {
       LowerDiffInput.encode(message.lower, writer.uint32(10).fork()).join();
@@ -6731,7 +6767,7 @@ export const DiffOp: MessageFns<DiffOp> = {
 
 function bytesFromBase64(b64: string): Uint8Array {
   if ((globalThis as any).Buffer) {
-    return Uint8Array.from(globalThis.Buffer.from(b64, "base64"));
+    return Uint8Array.from(globalThis.Buffer.from(b64, 'base64'));
   } else {
     const bin = globalThis.atob(b64);
     const arr = new Uint8Array(bin.length);
@@ -6744,13 +6780,13 @@ function bytesFromBase64(b64: string): Uint8Array {
 
 function base64FromBytes(arr: Uint8Array): string {
   if ((globalThis as any).Buffer) {
-    return globalThis.Buffer.from(arr).toString("base64");
+    return globalThis.Buffer.from(arr).toString('base64');
   } else {
     const bin: string[] = [];
-    arr.forEach((byte) => {
+    arr.forEach(byte => {
       bin.push(globalThis.String.fromCharCode(byte));
     });
-    return globalThis.btoa(bin.join(""));
+    return globalThis.btoa(bin.join(''));
   }
 }
 
@@ -6770,8 +6806,8 @@ export type DeepPartial<T> = T extends Builtin
     : T extends ReadonlyArray<infer U>
       ? ReadonlyArray<DeepPartial<U>>
       : T extends { $case: string }
-        ? { [K in keyof Omit<T, "$case">]?: DeepPartial<T[K]> } & {
-            $case: T["$case"];
+        ? { [K in keyof Omit<T, '$case'>]?: DeepPartial<T[K]> } & {
+            $case: T['$case'];
           }
         : T extends {}
           ? { [K in keyof T]?: DeepPartial<T[K]> }
@@ -6787,16 +6823,16 @@ export type Exact<P, I extends P> = P extends Builtin
 function longToNumber(int64: { toString(): string }): number {
   const num = globalThis.Number(int64.toString());
   if (num > globalThis.Number.MAX_SAFE_INTEGER) {
-    throw new globalThis.Error("Value is larger than Number.MAX_SAFE_INTEGER");
+    throw new globalThis.Error('Value is larger than Number.MAX_SAFE_INTEGER');
   }
   if (num < globalThis.Number.MIN_SAFE_INTEGER) {
-    throw new globalThis.Error("Value is smaller than Number.MIN_SAFE_INTEGER");
+    throw new globalThis.Error('Value is smaller than Number.MIN_SAFE_INTEGER');
   }
   return num;
 }
 
 function isObject(value: any): boolean {
-  return typeof value === "object" && value !== null;
+  return typeof value === 'object' && value !== null;
 }
 
 function isSet(value: any): boolean {

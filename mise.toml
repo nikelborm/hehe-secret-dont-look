@@ -52,6 +52,7 @@ protoc \
   --ts_proto_opt=lowerCaseServiceMethods=true \
   --ts_proto_opt=oneof=unions \
   --ts_proto_out=./ \
+  --ts_proto_opt=enumsAsLiterals=true \
   --proto_path=./buildkit/solver/pb/ \
   ./buildkit/solver/pb/ops.proto
 

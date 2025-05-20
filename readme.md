@@ -40,6 +40,6 @@
 2. protobuf.js is dead
 3. there's nothing in Effect.ts codebase about protobuf or gRPC. Only MsgPack, which is irrelevant
 4. [GitHub bufbuild/protobuf-es](https://github.com/bufbuild/protobuf-es), [@bufbuild/protoc-gen-es NPM](https://www.npmjs.com/package/@bufbuild/protoc-gen-es) are fresh and hot (3 yo)
-5. 2 previous libraries are used by [GitHub stephenh/ts-proto](https://github.com/stephenh/ts-proto), [NPM stephenh/ts-proto](https://www.npmjs.com/package/ts-proto), which I'll use
+5. 2 previous libraries are used by [GitHub stephenh/ts-proto](https://github.com/stephenh/ts-proto), [NPM stephenh/ts-proto](https://www.npmjs.com/package/ts-proto), which I use
 
 ## Plan
