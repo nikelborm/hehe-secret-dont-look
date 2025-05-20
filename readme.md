@@ -1,4 +1,4 @@
-# Rules of this repo
+# Rules of this repo (until 1.0.0)
 
 - no tests
 - no documentation
