@@ -8,7 +8,8 @@
     "allowUnusedLabels": false,
     "stripInternal": false,
     "allowImportingTsExtensions": true,
-    "noUnusedParameters": true,
+    // temporary for faster development
+    // "noUnusedParameters": true,
     "downlevelIteration": true,
     "resolvePackageJsonExports": true,
     "isolatedDeclarations": false,
@@ -38,7 +39,8 @@
     "preserveWatchOutput": true,
     "outDir": "./dist",
     "allowUnreachableCode": false,
-    "noUnusedLocals": true,
+    // temporary for faster development
+    // "noUnusedLocals": true,
     "baseUrl": "./",
     "incremental": true,
     "lib": ["ESNext"],
