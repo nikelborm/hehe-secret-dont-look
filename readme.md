@@ -30,7 +30,7 @@
 
 ## TODO
 
-1. benchmark which protobuf generate TS files are the smallest, shic
+1. benchmark which protobuf generate TS files are the smallest, or faster working
 2. PR to ts-proto to enable tree-shaking?
 3. research into [vtproto generation](https://github.com/moby/buildkit/pull/5342#issuecomment-2362232396)?
 4.

@@ -59,3 +59,11 @@ protoc \
 prettier ./ops.ts --write
 mv -f ./ops.ts ./generated/
 """
+
+[tasks.print-proto-files]
+run = """
+#!/usr/bin/env bash
+set -euo pipefail
+
+find ./buildkit/ -type f -name "*.proto"
+"""
