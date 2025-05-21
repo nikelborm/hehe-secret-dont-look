@@ -1,4 +1,4 @@
-import { Data } from 'effect';
+import { Data, Stream } from 'effect';
 // prettier-ignore
 import {
   BuildInput, FileOp, OpMetadata, FileActionMkDir,Definition, Meta,
@@ -14,4 +14,28 @@ import {
 
 console.log('asd');
 
-// Enum
+type RemoteData = Data.TaggedEnum<{
+  Loading: {};
+  Success: { readonly data: string };
+  Failure: { readonly reason: string };
+}>;
+
+const { $is, $match, Loading, Success } = Data.taggedEnum<RemoteData>();
+
+// Use `$is` to create a type guard for "Loading"
+const isLoading = $is('Loading');
+
+console.log(isLoading(Loading()));
+// Output: true
+console.log(isLoading(Success({ data: 'test' })));
+// Output: false
+
+// Use `$match` for pattern matching
+const matcher = $match({
+  Loading: () => 'this is a Loading',
+  Success: ({ data }) => `this is a Success: ${data}`,
+  Failure: ({ reason }) => `this is a Failure: ${reason}`,
+});
+
+console.log(matcher(Success({ data: 'test' })));
+// Output: "this is a Success: test"
