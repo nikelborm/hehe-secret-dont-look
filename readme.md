@@ -29,18 +29,10 @@
 
 ## TODO
 
-1. benchmark which protobuf generate TS files are the smallest, or faster working
-2. PR to ts-proto to enable tree-shaking?
-3. analyze other existing libraries for generating typescript from .proto, to choose a better basis.
-4. research into [vtproto generation](https://github.com/moby/buildkit/pull/5342#issuecomment-2362232396)?
-5. write decorator to apply to all functions, that will save all its inputs and outputs into a global registry, for later inspection
-6. attempt to generate a build from single inlined tree shaken script
-7. GUI to inspect and create LLB of buildkit + registry for buildkit configurations
-8. maybe take some code to generate ts types from schema and back stored in [Effect-TS/language-service](https://github.com/Effect-TS/language-service)
-9. maybe add my implementation later to [grpc-ecosystem/awesome-grpc](https://github.com/grpc-ecosystem/awesome-grpc)
-10. Research selling points of infrastructure as code
-11. Write a letter to [this dude](https://mattrickard.com/request-for-project-typescript-docker-construct)?
-12. maybe implement something like [this](https://typia.io/docs/protobuf/encode/) in the future?
+1. research into [vtproto generation](https://github.com/moby/buildkit/pull/5342#issuecomment-2362232396)?
+2. write decorator to apply to all functions, that will save all its inputs and outputs into a global registry, for later inspection
+3. attempt to generate a build from single inlined tree shaken script
+4. maybe take some code to generate ts types from schema and back stored in [Effect-TS/language-service](https://github.com/Effect-TS/language-service)
 
 ## Selling points
 
@@ -52,16 +44,16 @@
 6. Modules, packages, and inheritance for LLBs
 7. Much better UX with much better autocomplete (in-IDE autocomplete for secrets names, or build args, provided by the type-system)
 8. Show the world of buildkit for frontenders
+9. TypeScript has C-style syntax and can be more easily understood by Java devs, than something closest to buildkit -- Go. There's no Java buildkit frontends anyway.
 
 ## Notes
 
 1. gogo/proto deprecated: [moby/buildkit#3119](https://github.com/moby/buildkit/issues/3119)
-2. protobuf.js is dead
-3. there's nothing in Effect.ts codebase about protobuf or gRPC. Only MsgPack, which is irrelevant
-4. important thing is to somehow be aware of every cacheable shit in existence, so that we can work with artifacts based on their cache. We need to store and calculate [hashes](https://mattrickard.com/vertical-workflow-engines).
-5. Don't forget to disable telemetry if any would be present in projects.
-6. Strictly follow rules of License of the project chosen as a basis.
-7. Use @generated field from jsdoc
+2. there's nothing in Effect.ts codebase about protobuf or gRPC. Only MsgPack, which is irrelevant
+3. important thing is to somehow be aware of every cacheable shit in existence, so that we can work with artifacts based on their cache. We need to store and calculate [hashes](https://mattrickard.com/vertical-workflow-engines).
+4. Don't forget to disable telemetry if any would be present in projects.
+5. Strictly follow rules of License of the project chosen as a basis.
+6. Use @generated field from jsdoc
 
 ## Ecosystem od TS/JS generation from protobuf
 
@@ -105,3 +97,18 @@ Available solutions related to generation of JS/TS (at 21 may 2025). Testing res
 | [protocol-buffers](https://www.npmjs.com/package/protocol-buffers)                 | 3 years               |                |                | -   | [mafintosh/protocol-buffers](https://github.com/mafintosh/protocol-buffers)                       | 762   | 11 years old | Very old and very dead.                                                                                                                                                                                                                  |
 
 ## Plan
+
+### Done
+
+1. analyze other existing libraries for generating typescript from .proto, to choose a better basis.
+
+### Potential tasks, not required to an immediate success of th project
+
+1. PR to ts-proto to enable tree-shaking?
+2. maybe implement something like [this](https://typia.io/docs/protobuf/encode/) to generate protobuf schema from Effect RPC declarations?
+3. make UI visualizations like I wanted for my smarthouse, but for entities representing dockerfiles, so that nodes have parametrized inputs representing build args, one of which is FROM field
+4. GUI to inspect and create LLB of buildkit
+5. registry for LLBs
+6. Research selling points of infrastructure as code
+7. Write a letter to [this dude](https://mattrickard.com/request-for-project-typescript-docker-construct)?
+8. maybe add my implementation later to [grpc-ecosystem/awesome-grpc](https://github.com/grpc-ecosystem/awesome-grpc)
