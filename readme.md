@@ -45,6 +45,9 @@
 7. Much better UX with much better autocomplete (in-IDE autocomplete for secrets names, or build args, provided by the type-system)
 8. Show the world of buildkit for frontenders
 9. TypeScript has C-style syntax and can be more easily understood by Java devs, than something closest to buildkit -- Go. There's no Java buildkit frontends anyway.
+10. R&D. Experience I get from writing this implementation can be applied to solve problems for a company. We need experiments before doing big stuff!
+11. [Why TypeScript for Infrastructure?](https://mattrickard.com/why-typescript-for-infrastructure)
+12. Cloud development kit is cool and gaining popularity.
 
 ## Notes
 
@@ -112,3 +115,4 @@ Available solutions related to generation of JS/TS (at 21 may 2025). Testing res
 6. Research selling points of infrastructure as code
 7. Write a letter to [this dude](https://mattrickard.com/request-for-project-typescript-docker-construct)?
 8. maybe add my implementation later to [grpc-ecosystem/awesome-grpc](https://github.com/grpc-ecosystem/awesome-grpc)
+9. vscode plugin to highlight pieces of Bash code inside those container definition classes
