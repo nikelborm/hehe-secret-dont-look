@@ -35,6 +35,8 @@
 2. write decorator to apply to all functions, that will save all its inputs and outputs into a global registry, for later inspection
 3. attempt to generate a build from single inlined tree shaken script
 4. maybe take some code to generate ts types from schema and back stored in [Effect-TS/language-service](https://github.com/Effect-TS/language-service)
+5. Importer from Dockerfiles and to dockerfiles
+6. Package with scraped info from Dockerhub such as container names
 
 ## Selling points
 
@@ -45,11 +47,13 @@
 5. Dockerfile components reuse and shared parametrized configs.
 6. Modules, packages, and inheritance for LLBs
 7. Much better UX with much better autocomplete (in-IDE autocomplete for secrets names, or build args, provided by the type-system)
-8. Show the world of buildkit for frontenders
+8. Show the world of buildkit and Docker for frontenders
 9. TypeScript has C-style syntax and can be more easily understood by Java devs, than something closest to buildkit -- Go. There's no Java buildkit frontends anyway.
 10. R&D. Experience I get from writing this implementation can be applied to solve problems for a company. We need experiments before doing big stuff!
 11. [Why TypeScript for Infrastructure?](https://mattrickard.com/why-typescript-for-infrastructure)
 12. Cloud development kit is cool and gaining popularity.
+13. targets, that can't be used from outside with the help of ESM
+14. ability to import from other Dockerfiles
 
 ## Notes
 
