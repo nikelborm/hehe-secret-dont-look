@@ -26,6 +26,8 @@
 
 1. https://pkg.go.dev/github.com/moby/buildkit/client/llb
 2. https://github.com/dagger/dagger
+3. https://github.com/grpc/grpc-node/issues/2038
+4. https://testcontainers.com/
 
 ## TODO
 
@@ -58,7 +60,7 @@
 5. Strictly follow rules of License of the project chosen as a basis.
 6. Use @generated field from jsdoc
 
-## Ecosystem od TS/JS generation from protobuf
+## Ecosystem of TS/JS generation from protobuf
 
 Available solutions related to generation of JS/TS (at 21 may 2025). Testing results provided by [bufbuild/protobuf-conformance](https://github.com/bufbuild/protobuf-conformance)
 

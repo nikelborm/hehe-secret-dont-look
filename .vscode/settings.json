@@ -1,5 +1,5 @@
 {
-  "python.defaultInterpreterPath": "/home/nikel/.local/share/mise/installs/python/3.7.17/bin/python",
+  "python.defaultInterpreterPath": "/home/nikel/.local/share/mise/installs/python/3.13.3/bin/python",
   "debug.javascript.defaultRuntimeExecutable": {
     "pwa-node": "/home/nikel/.local/share/mise/shims/node"
   }
