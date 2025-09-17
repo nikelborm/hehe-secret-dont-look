@@ -63,6 +63,8 @@
 4. Don't forget to disable telemetry if any would be present in projects.
 5. Strictly follow rules of License of the project chosen as a basis.
 6. Use @generated field from jsdoc
+7. [fp-ts/optic](https://github.com/fp-ts/optic), [gcanti/monocle-ts](https://github.com/gcanti/monocle-ts)
+8. [Discord: Inquiry About gRPC Protobuf Support in Effect Library](https://discord.com/channels/795981131316985866/1417143834227376190)
 
 ## Ecosystem of TS/JS generation from protobuf
 
