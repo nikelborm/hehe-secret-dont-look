@@ -1,6 +1,6 @@
 # Plan
 
-## Phase 1
+## Phase 1 -- in progress
 
 1. pull repo of the dude generating something from protobuf in effect
 2. see what it is, research it
