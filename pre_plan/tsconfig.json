@@ -27,7 +27,7 @@
     "isolatedModules": true,
     "declaration": true,
     "declarationMap": true,
-    "declarationDir": "./dist/dts",
+    "declarationDir": "pre_plan/dist/dts",
     // they'll be removed by bundler if needed
     "removeComments": false,
     "emitDecoratorMetadata": true,
@@ -37,7 +37,7 @@
     "target": "ESNext",
     "sourceMap": true,
     "preserveWatchOutput": true,
-    "outDir": "./dist",
+    "outDir": "pre_plan/dist",
     "allowUnreachableCode": false,
     // temporary for faster development
     // "noUnusedLocals": true,
@@ -83,13 +83,13 @@
     ".stryker-tmp",
     ".vscode",
     "buildkit",
-    "dist",
+    "pre_plan/dist",
     "experiment-1",
     "gh-page",
     "node_modules",
-    "the-moby-effect",
+    "pre_plan/the-moby-effect",
     "reports",
-    "tmp",
+    "pre_plan/tmp",
     "vite.config.ts"
   ]
 }
