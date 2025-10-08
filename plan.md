@@ -2,11 +2,6 @@
 
 ## Phase 1 -- in progress
 
-1. pull repo of the dude generating something from protobuf in effect
-2. see what it is, research it
-3. Document findings, what it is and what pieces can be reused, and how much
-   do his goals differ from mine
-
 ## Phase 2
 
 1. create a simple RPC experiment with effect RPC library
