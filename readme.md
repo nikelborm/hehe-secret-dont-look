@@ -67,6 +67,7 @@
 8. [Discord: Inquiry About gRPC Protobuf Support in Effect Library](https://discord.com/channels/795981131316985866/1417143834227376190)
 9. For insights at how to build my docker config thing look through
    [@fpk/k8s source](https://github.com/tim-smart/fpk/tree/master/packages/k8s/src)
+   and [usage example](https://github.com/tim-smart/cluster-docker/blob/main/manifests/shooter/index.ts)
 
 ## [Ecosystem of TS/JS generation from protobuf](./ecosystem.md)
 
