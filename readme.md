@@ -68,6 +68,7 @@
 9. For insights at how to build my docker config thing look through
    [@fpk/k8s source](https://github.com/tim-smart/fpk/tree/master/packages/k8s/src)
    and [usage example](https://github.com/tim-smart/cluster-docker/blob/main/manifests/shooter/index.ts)
+10. PR [moby/buildkit#6393](https://github.com/moby/buildkit/pull/6393) that might be helpful in creating NPM package exporter
 
 ## [Ecosystem of TS/JS generation from protobuf](./ecosystem.md)
 
