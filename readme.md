@@ -71,6 +71,8 @@
 10. PR [moby/buildkit#6393](https://github.com/moby/buildkit/pull/6393) that might be helpful in creating NPM package exporter
 11. potential adopter: [edgeandnode/amp-typescript](https://github.com/edgeandnode/amp-typescript)
 12. [entropitor/terraform-providers](https://github.com/entropitor/terraform-providers/tree/main)
+13. [Gemini Code wiki of BuildKit](https://codewiki.google/github.com/moby/buildkit)
+14. [Devin DeepWiki of BuildKit](https://deepwiki.com/moby/buildkit)
 
 ## [Ecosystem of TS/JS generation from protobuf](./ecosystem.md)
 
