@@ -73,6 +73,7 @@
 12. [entropitor/terraform-providers](https://github.com/entropitor/terraform-providers/tree/main)
 13. [Gemini Code wiki of BuildKit](https://codewiki.google/github.com/moby/buildkit)
 14. [Devin DeepWiki of BuildKit](https://deepwiki.com/moby/buildkit)
+15. https://github.com/Effect-TS/effect-smol/pull/1023/files
 
 ## [Ecosystem of TS/JS generation from protobuf](./ecosystem.md)
 
