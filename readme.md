@@ -74,6 +74,7 @@
 13. [Gemini Code wiki of BuildKit](https://codewiki.google/github.com/moby/buildkit)
 14. [Devin DeepWiki of BuildKit](https://deepwiki.com/moby/buildkit)
 15. https://github.com/Effect-TS/effect-smol/pull/1023/files
+16. [confect codegen](https://discord.com/channels/795981131316985866/1473180710524289094)
 
 ## [Ecosystem of TS/JS generation from protobuf](./ecosystem.md)
 
